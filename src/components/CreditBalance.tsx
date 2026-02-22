@@ -26,7 +26,7 @@ export function CreditBalance() {
     }
 
     loadBalance()
-  }, [])
+  }, [supabase])
 
   if (loading) {
     return <div className="text-gray-600">Loading credits...</div>

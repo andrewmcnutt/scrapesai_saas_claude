@@ -28,11 +28,6 @@ export default function LoginPage() {
     }
   }
 
-  async function handleLogout() {
-    await supabase.auth.signOut()
-    router.refresh()
-  }
-
   return (
     <div className="min-h-screen flex items-center justify-center">
       <form onSubmit={handleSubmit} className="max-w-md w-full p-6 bg-white rounded-lg shadow">
@@ -67,7 +62,7 @@ export default function LoginPage() {
         </button>
 
         <p className="mt-4 text-center">
-          Don't have an account? <a href="/signup" className="text-blue-600">Sign up</a>
+          Don&apos;t have an account? <a href="/signup" className="text-blue-600">Sign up</a>
         </p>
       </form>
     </div>

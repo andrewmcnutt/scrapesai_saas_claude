@@ -5,9 +5,7 @@ import { checkRateLimit } from './src/lib/rate-limit'
 export async function middleware(request: NextRequest) {
   // Rate limit signup endpoint
   if (request.nextUrl.pathname === '/api/auth/signup') {
-    const ip = request.headers.get('x-forwarded-for')?.split(',')[0] ||
-               request.ip ||
-               'unknown'
+    const ip = request.headers.get('x-forwarded-for')?.split(',')[0] || 'unknown'
 
     const { allowed, resetTime } = checkRateLimit(
       ip,
