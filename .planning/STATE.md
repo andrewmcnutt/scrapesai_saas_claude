@@ -10,30 +10,31 @@ See: .planning/PROJECT.md (updated 2026-02-21)
 ## Current Position
 
 Phase: 1 of 5 (Foundation & Infrastructure)
-Plan: 1 of 4 in current phase
+Plan: 2 of 4 in current phase
 Status: Active development
-Last activity: 2026-02-22 — Completed 01-01-PLAN.md (Next.js + Supabase foundation)
+Last activity: 2026-02-22 — Completed 01-02-PLAN.md (Supabase authentication with email verification)
 
-Progress: [██░░░░░░░░] 25%
+Progress: [████░░░░░░] 50%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 1
-- Average duration: 11 minutes
+- Total plans completed: 2
+- Average duration: 6 minutes
 - Total execution time: 0.2 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| 01    | 1     | 11 min | 11 min  |
+| 01    | 2     | 12 min | 6 min  |
 
 **Recent Plans:**
 
 | Plan | Duration | Tasks | Files |
 |------|----------|-------|-------|
 | Phase 01 P01 | 11 min | 2 tasks | 14 files |
+| Phase 01 P02 | 1 | 2 tasks | 8 files |
 
 ## Accumulated Context
 
@@ -48,6 +49,8 @@ Recent decisions affecting current work:
 - Light theme only: Matches relume.io inspiration, reduces design complexity, ships faster
 - [Phase 01]: INSERT-only ledger pattern for credit transactions ensures immutability and provides full audit trail
 - [Phase 01]: RLS enabled from day one ensures security-first approach for user data isolation
+- [Phase 01-02]: Use getClaims() instead of getSession() for token validation (more secure and future-proof)
+- [Phase 01-02]: Allocate 3 free credits on email verification to prevent abuse
 
 ### Pending Todos
 
@@ -73,5 +76,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-22 (foundation infrastructure)
-Stopped at: Completed 01-01-PLAN.md (Next.js 15 + Supabase foundation with credit ledger)
+Stopped at: Completed 01-02-PLAN.md (Supabase authentication with email verification)
 Resume file: None

@@ -9,10 +9,10 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Authentication
 
-- [ ] **AUTH-01**: User can sign up with email and password via Supabase
-- [ ] **AUTH-02**: User receives email verification after signup
-- [ ] **AUTH-03**: User can log in with verified email and session persists across browser refresh
-- [ ] **AUTH-04**: User can log out from any page
+- [x] **AUTH-01**: User can sign up with email and password via Supabase
+- [x] **AUTH-02**: User receives email verification after signup
+- [x] **AUTH-03**: User can log in with verified email and session persists across browser refresh
+- [x] **AUTH-04**: User can log out from any page
 - [ ] **AUTH-05**: Signup includes CAPTCHA to prevent bot abuse (Cloudflare Turnstile)
 - [ ] **AUTH-06**: Signup rate limited by IP (3 signups per day maximum)
 
@@ -164,10 +164,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| AUTH-01 | Phase 1 | Pending |
-| AUTH-02 | Phase 1 | Pending |
-| AUTH-03 | Phase 1 | Pending |
-| AUTH-04 | Phase 1 | Pending |
+| AUTH-01 | Phase 1 | Complete |
+| AUTH-02 | Phase 1 | Complete |
+| AUTH-03 | Phase 1 | Complete |
+| AUTH-04 | Phase 1 | Complete |
 | AUTH-05 | Phase 1 | Pending |
 | AUTH-06 | Phase 1 | Pending |
 | BRND-01 | Phase 2 | Pending |
