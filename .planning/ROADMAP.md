@@ -12,7 +12,7 @@ This roadmap delivers a production-ready LinkedIn carousel generation SaaS in 5 
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Foundation & Infrastructure** - Authentication, database, webhook architecture, credit system foundation
+- [x] **Phase 1: Foundation & Infrastructure** - Authentication, database, webhook architecture, credit system foundation
 - [ ] **Phase 2: Brand Management** - Brand profiles with voice guidelines, colors, CTA settings
 - [ ] **Phase 3: Carousel Generation** - Core generation workflow with N8N, async processing, history, downloads
 - [ ] **Phase 4: Stripe Integration** - Subscription payments, credit allocation, customer portal
@@ -34,10 +34,10 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 4 plans in 4 waves
 
 Plans:
-- [ ] 01-01-PLAN.md — Project & Database Foundation (Next.js 15, Supabase setup, credit ledger schema)
-- [ ] 01-02-PLAN.md — Authentication System (Supabase auth with email verification, session management)
-- [ ] 01-03-PLAN.md — Security & Dashboard (Rate limiting, CAPTCHA, protected dashboard with credit balance)
-- [ ] 01-04-PLAN.md — Human Verification Checkpoint (End-to-end auth flow testing)
+- [x] 01-01-PLAN.md — Project & Database Foundation (Next.js 15, Supabase setup, credit ledger schema)
+- [x] 01-02-PLAN.md — Authentication System (Supabase auth with email verification, session management)
+- [x] 01-03-PLAN.md — Security & Dashboard (Rate limiting, CAPTCHA, protected dashboard with credit balance)
+- [x] 01-04-PLAN.md — Human Verification Checkpoint (End-to-end auth flow testing)
 
 ### Phase 2: Brand Management
 **Goal**: Every user has a brand profile with colors, voice guidelines, and CTA settings required for carousel generation
@@ -115,7 +115,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation & Infrastructure | 0/4 | Planning complete | - |
+| 1. Foundation & Infrastructure | 4/4 | Complete | 2026-02-22 |
 | 2. Brand Management | 0/TBD | Not started | - |
 | 3. Carousel Generation | 0/TBD | Not started | - |
 | 4. Stripe Integration | 0/TBD | Not started | - |
