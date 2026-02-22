@@ -18,9 +18,9 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Brand Management
 
-- [ ] **BRND-01**: User is prompted to create brand profile on first carousel generation attempt
-- [ ] **BRND-02**: User can set brand name, colors, voice guidelines, product description, target audience, and CTA text
-- [ ] **BRND-03**: User can view and edit brand settings from dashboard
+- [x] **BRND-01**: User is prompted to create brand profile on first carousel generation attempt
+- [x] **BRND-02**: User can set brand name, colors, voice guidelines, product description, target audience, and CTA text
+- [x] **BRND-03**: User can view and edit brand settings from dashboard
 - [x] **BRND-04**: Brand data is stored in Supabase with RLS policies
 - [x] **BRND-05**: Each user has one brand (1:1 relationship with user account)
 
@@ -170,9 +170,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | AUTH-04 | Phase 1 | Complete |
 | AUTH-05 | Phase 1 | Complete |
 | AUTH-06 | Phase 1 | Complete |
-| BRND-01 | Phase 2 | Pending |
-| BRND-02 | Phase 2 | Pending |
-| BRND-03 | Phase 2 | Pending |
+| BRND-01 | Phase 2 | Complete |
+| BRND-02 | Phase 2 | Complete |
+| BRND-03 | Phase 2 | Complete |
 | BRND-04 | Phase 2 | Complete |
 | BRND-05 | Phase 2 | Complete |
 | GEN-01 | Phase 3 | Pending |
