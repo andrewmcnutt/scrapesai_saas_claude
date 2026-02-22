@@ -31,10 +31,13 @@ Decimal phases appear between their surrounding integers in numeric order.
   4. Signup is protected by CAPTCHA and rate limited to 3 signups per day per IP
   5. Database has RLS enabled on all tables with proper user isolation policies
   6. Credit transaction ledger is functional with SUM-based balance calculation
-**Plans**: TBD
+**Plans**: 4 plans in 4 waves
 
 Plans:
-- [ ] TBD during phase planning
+- [ ] 01-01-PLAN.md — Project & Database Foundation (Next.js 15, Supabase setup, credit ledger schema)
+- [ ] 01-02-PLAN.md — Authentication System (Supabase auth with email verification, session management)
+- [ ] 01-03-PLAN.md — Security & Dashboard (Rate limiting, CAPTCHA, protected dashboard with credit balance)
+- [ ] 01-04-PLAN.md — Human Verification Checkpoint (End-to-end auth flow testing)
 
 ### Phase 2: Brand Management
 **Goal**: Every user has a brand profile with colors, voice guidelines, and CTA settings required for carousel generation
@@ -112,7 +115,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation & Infrastructure | 0/TBD | Not started | - |
+| 1. Foundation & Infrastructure | 0/4 | Planning complete | - |
 | 2. Brand Management | 0/TBD | Not started | - |
 | 3. Carousel Generation | 0/TBD | Not started | - |
 | 4. Stripe Integration | 0/TBD | Not started | - |
