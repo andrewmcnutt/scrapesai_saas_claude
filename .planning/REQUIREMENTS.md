@@ -164,13 +164,96 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| *Pending roadmap creation* | — | — |
+| AUTH-01 | Phase 1 | Pending |
+| AUTH-02 | Phase 1 | Pending |
+| AUTH-03 | Phase 1 | Pending |
+| AUTH-04 | Phase 1 | Pending |
+| AUTH-05 | Phase 1 | Pending |
+| AUTH-06 | Phase 1 | Pending |
+| BRND-01 | Phase 2 | Pending |
+| BRND-02 | Phase 2 | Pending |
+| BRND-03 | Phase 2 | Pending |
+| BRND-04 | Phase 2 | Pending |
+| BRND-05 | Phase 2 | Pending |
+| GEN-01 | Phase 3 | Pending |
+| GEN-02 | Phase 3 | Pending |
+| GEN-03 | Phase 3 | Pending |
+| GEN-04 | Phase 3 | Pending |
+| GEN-05 | Phase 3 | Pending |
+| GEN-06 | Phase 3 | Pending |
+| GEN-07 | Phase 3 | Pending |
+| GEN-08 | Phase 3 | Pending |
+| GEN-09 | Phase 3 | Pending |
+| GEN-10 | Phase 3 | Pending |
+| GEN-11 | Phase 3 | Pending |
+| GEN-12 | Phase 3 | Pending |
+| GEN-13 | Phase 3 | Pending |
+| GEN-14 | Phase 3 | Pending |
+| GEN-15 | Phase 3 | Pending |
+| HIST-01 | Phase 3 | Pending |
+| HIST-02 | Phase 3 | Pending |
+| HIST-03 | Phase 3 | Pending |
+| HIST-04 | Phase 3 | Pending |
+| HIST-05 | Phase 3 | Pending |
+| HIST-06 | Phase 3 | Pending |
+| CRED-01 | Phase 4 | Pending |
+| CRED-02 | Phase 4 | Pending |
+| CRED-03 | Phase 4 | Pending |
+| CRED-04 | Phase 4 | Pending |
+| CRED-05 | Phase 4 | Pending |
+| CRED-06 | Phase 1 | Pending |
+| CRED-07 | Phase 1 | Pending |
+| CRED-08 | Phase 1 | Pending |
+| CRED-09 | Phase 4 | Pending |
+| CRED-10 | Phase 4 | Pending |
+| PAY-01 | Phase 4 | Pending |
+| PAY-02 | Phase 4 | Pending |
+| PAY-03 | Phase 4 | Pending |
+| PAY-04 | Phase 4 | Pending |
+| PAY-05 | Phase 4 | Pending |
+| PAY-06 | Phase 4 | Pending |
+| PAY-07 | Phase 4 | Pending |
+| PAY-08 | Phase 4 | Pending |
+| PAY-09 | Phase 4 | Pending |
+| PAY-10 | Phase 4 | Pending |
+| PAY-11 | Phase 4 | Pending |
+| PAY-12 | Phase 4 | Pending |
+| PAY-13 | Phase 4 | Pending |
+| PAY-14 | Phase 4 | Pending |
+| N8N-01 | Phase 3 | Pending |
+| N8N-02 | Phase 3 | Pending |
+| N8N-03 | Phase 3 | Pending |
+| N8N-04 | Phase 3 | Pending |
+| N8N-05 | Phase 3 | Pending |
+| N8N-06 | Phase 3 | Pending |
+| N8N-07 | Phase 3 | Pending |
+| N8N-08 | Phase 3 | Pending |
+| N8N-09 | Phase 3 | Pending |
+| N8N-10 | Phase 3 | Pending |
+| UI-01 | Phase 5 | Pending |
+| UI-02 | Phase 5 | Pending |
+| UI-03 | Phase 5 | Pending |
+| UI-04 | Phase 5 | Pending |
+| UI-05 | Phase 3 | Pending |
+| UI-06 | Phase 5 | Pending |
+| UI-07 | Phase 5 | Pending |
+| UI-08 | Phase 5 | Pending |
+| UI-09 | Phase 5 | Pending |
+| UI-10 | Phase 5 | Pending |
+| INFRA-01 | Phase 1 | Pending |
+| INFRA-02 | Phase 1 | Pending |
+| INFRA-03 | Phase 1 | Pending |
+| INFRA-04 | Phase 4 | Pending |
+| INFRA-05 | Phase 1 | Pending |
+| INFRA-06 | Phase 1 | Pending |
+| INFRA-07 | Phase 1 | Pending |
+| INFRA-08 | Phase 1 | Pending |
 
 **Coverage:**
 - v1 requirements: 58 total
-- Mapped to phases: 0 (pending roadmap)
-- Unmapped: 58 ⚠️
+- Mapped to phases: 58 (100%)
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-02-21*
-*Last updated: 2026-02-21 after initial definition*
+*Last updated: 2026-02-21 after roadmap creation*
