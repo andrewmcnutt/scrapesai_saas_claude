@@ -18,6 +18,56 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
+      brand_profiles: {
+        Row: {
+          id: string
+          user_id: string
+          brand_name: string
+          primary_color: string
+          secondary_color: string
+          voice_guidelines: string
+          product_description: string
+          target_audience: string
+          cta_text: string
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          user_id: string
+          brand_name: string
+          primary_color: string
+          secondary_color: string
+          voice_guidelines: string
+          product_description: string
+          target_audience: string
+          cta_text: string
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          user_id?: string
+          brand_name?: string
+          primary_color?: string
+          secondary_color?: string
+          voice_guidelines?: string
+          product_description?: string
+          target_audience?: string
+          cta_text?: string
+          created_at?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "brand_profiles_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: true
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          }
+        ]
+      }
       credit_transactions: {
         Row: {
           id: string
