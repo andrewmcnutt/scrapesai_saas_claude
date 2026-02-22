@@ -10,24 +10,24 @@ See: .planning/PROJECT.md (updated 2026-02-21)
 ## Current Position
 
 Phase: 1 of 5 (Foundation & Infrastructure)
-Plan: 2 of 4 in current phase
+Plan: 3 of 4 in current phase
 Status: Active development
-Last activity: 2026-02-22 — Completed 01-02-PLAN.md (Supabase authentication with email verification)
+Last activity: 2026-02-22 — Completed 01-03-PLAN.md (Security and Dashboard)
 
-Progress: [████░░░░░░] 50%
+Progress: [██████░░░░] 75%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 2
-- Average duration: 6 minutes
-- Total execution time: 0.2 hours
+- Total plans completed: 3
+- Average duration: 7 minutes
+- Total execution time: 0.3 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| 01    | 2     | 12 min | 6 min  |
+| 01    | 3     | 20 min | 7 min  |
 
 **Recent Plans:**
 
@@ -35,6 +35,7 @@ Progress: [████░░░░░░] 50%
 |------|----------|-------|-------|
 | Phase 01 P01 | 11 min | 2 tasks | 14 files |
 | Phase 01 P02 | 1 | 2 tasks | 8 files |
+| Phase 01 P03 | 8 | 2 tasks | 9 files |
 
 ## Accumulated Context
 
@@ -51,6 +52,9 @@ Recent decisions affecting current work:
 - [Phase 01]: RLS enabled from day one ensures security-first approach for user data isolation
 - [Phase 01-02]: Use getClaims() instead of getSession() for token validation (more secure and future-proof)
 - [Phase 01-02]: Allocate 3 free credits on email verification to prevent abuse
+- [Phase 01-03]: Map-based in-memory rate limiting for simplicity in v1 (production should use Redis/Upstash)
+- [Phase 01-03]: Credit balance calculated as SUM(amount) from credit_transactions on every page load
+- [Phase 01-03]: Dashboard layout enforces authentication at route group level
 
 ### Pending Todos
 
@@ -76,5 +80,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-22 (foundation infrastructure)
-Stopped at: Completed 01-02-PLAN.md (Supabase authentication with email verification)
+Stopped at: Completed 01-03-PLAN.md (Security and Dashboard)
 Resume file: None

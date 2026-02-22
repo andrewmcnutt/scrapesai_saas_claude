@@ -13,8 +13,8 @@ Requirements for initial release. Each maps to roadmap phases.
 - [x] **AUTH-02**: User receives email verification after signup
 - [x] **AUTH-03**: User can log in with verified email and session persists across browser refresh
 - [x] **AUTH-04**: User can log out from any page
-- [ ] **AUTH-05**: Signup includes CAPTCHA to prevent bot abuse (Cloudflare Turnstile)
-- [ ] **AUTH-06**: Signup rate limited by IP (3 signups per day maximum)
+- [x] **AUTH-05**: Signup includes CAPTCHA to prevent bot abuse (Cloudflare Turnstile)
+- [x] **AUTH-06**: Signup rate limited by IP (3 signups per day maximum)
 
 ### Brand Management
 
@@ -116,7 +116,7 @@ Requirements for initial release. Each maps to roadmap phases.
 - [x] **INFRA-05**: Environment variables secured (webhook secrets, service role keys, Stripe keys)
 - [x] **INFRA-06**: Database migrations version controlled
 - [x] **INFRA-07**: RLS enabled on all tables with indexed policy columns
-- [ ] **INFRA-08**: Rate limiting configured at application layer (IP-based, 5 generations/hour)
+- [x] **INFRA-08**: Rate limiting configured at application layer (IP-based, 5 generations/hour)
 
 ## v2 Requirements
 
@@ -168,8 +168,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | AUTH-02 | Phase 1 | Complete |
 | AUTH-03 | Phase 1 | Complete |
 | AUTH-04 | Phase 1 | Complete |
-| AUTH-05 | Phase 1 | Pending |
-| AUTH-06 | Phase 1 | Pending |
+| AUTH-05 | Phase 1 | Complete |
+| AUTH-06 | Phase 1 | Complete |
 | BRND-01 | Phase 2 | Pending |
 | BRND-02 | Phase 2 | Pending |
 | BRND-03 | Phase 2 | Pending |
@@ -247,7 +247,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | INFRA-05 | Phase 1 | Complete |
 | INFRA-06 | Phase 1 | Complete |
 | INFRA-07 | Phase 1 | Complete |
-| INFRA-08 | Phase 1 | Pending |
+| INFRA-08 | Phase 1 | Complete |
 
 **Coverage:**
 - v1 requirements: 58 total
