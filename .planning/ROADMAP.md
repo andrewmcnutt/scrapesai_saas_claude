@@ -48,10 +48,11 @@ Plans:
   2. User can set brand name, colors, voice guidelines, product description, target audience, and CTA text
   3. User can view and edit brand settings from dashboard at any time
   4. Brand data is stored in Supabase with proper RLS policies enforcing 1 brand per user
-**Plans**: TBD
+**Plans**: 2 plans in 2 waves
 
 Plans:
-- [ ] TBD during phase planning
+- [ ] 02-01-PLAN.md — Database Foundation (brand_profiles table, RLS policies, auto-creation trigger)
+- [ ] 02-02-PLAN.md — Brand Settings UI (Form with Zod validation, Server Actions, dashboard integration)
 
 ### Phase 3: Carousel Generation
 **Goal**: Users can generate professional carousels from ideas, select templates and styles, view generated content with post body text, and access full carousel history
@@ -116,7 +117,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation & Infrastructure | 4/4 | Complete | 2026-02-22 |
-| 2. Brand Management | 0/TBD | Not started | - |
+| 2. Brand Management | 0/2 | Not started | - |
 | 3. Carousel Generation | 0/TBD | Not started | - |
 | 4. Stripe Integration | 0/TBD | Not started | - |
 | 5. Polish & Launch | 0/TBD | Not started | - |
