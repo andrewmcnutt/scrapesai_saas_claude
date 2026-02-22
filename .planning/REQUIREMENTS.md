@@ -58,9 +58,9 @@ Requirements for initial release. Each maps to roadmap phases.
 - [ ] **CRED-03**: Credits deduct when user clicks Generate (not on download)
 - [ ] **CRED-04**: Unused credits roll over month-to-month for paid users
 - [ ] **CRED-05**: Dashboard displays current credit balance prominently
-- [ ] **CRED-06**: Credit transactions stored as ledger (INSERT only, never UPDATE balance)
-- [ ] **CRED-07**: Balance calculated as SUM(transactions) for audit trail
-- [ ] **CRED-08**: Credits cannot go negative (CHECK constraint in database)
+- [x] **CRED-06**: Credit transactions stored as ledger (INSERT only, never UPDATE balance)
+- [x] **CRED-07**: Balance calculated as SUM(transactions) for audit trail
+- [x] **CRED-08**: Credits cannot go negative (CHECK constraint in database)
 - [ ] **CRED-09**: Monthly credit allocation tracks billing_period_id for idempotency
 - [ ] **CRED-10**: System prevents generation when balance is 0
 
@@ -109,13 +109,13 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Deployment & Infrastructure
 
-- [ ] **INFRA-01**: Application deployed to Vercel
-- [ ] **INFRA-02**: Version control managed via GitHub
-- [ ] **INFRA-03**: Supabase project configured for production (auth, database, RLS)
+- [x] **INFRA-01**: Application deployed to Vercel
+- [x] **INFRA-02**: Version control managed via GitHub
+- [x] **INFRA-03**: Supabase project configured for production (auth, database, RLS)
 - [ ] **INFRA-04**: Stripe account configured with production webhooks
-- [ ] **INFRA-05**: Environment variables secured (webhook secrets, service role keys, Stripe keys)
-- [ ] **INFRA-06**: Database migrations version controlled
-- [ ] **INFRA-07**: RLS enabled on all tables with indexed policy columns
+- [x] **INFRA-05**: Environment variables secured (webhook secrets, service role keys, Stripe keys)
+- [x] **INFRA-06**: Database migrations version controlled
+- [x] **INFRA-07**: RLS enabled on all tables with indexed policy columns
 - [ ] **INFRA-08**: Rate limiting configured at application layer (IP-based, 5 generations/hour)
 
 ## v2 Requirements
@@ -201,9 +201,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | CRED-03 | Phase 4 | Pending |
 | CRED-04 | Phase 4 | Pending |
 | CRED-05 | Phase 4 | Pending |
-| CRED-06 | Phase 1 | Pending |
-| CRED-07 | Phase 1 | Pending |
-| CRED-08 | Phase 1 | Pending |
+| CRED-06 | Phase 1 | Complete |
+| CRED-07 | Phase 1 | Complete |
+| CRED-08 | Phase 1 | Complete |
 | CRED-09 | Phase 4 | Pending |
 | CRED-10 | Phase 4 | Pending |
 | PAY-01 | Phase 4 | Pending |
@@ -240,13 +240,13 @@ Which phases cover which requirements. Updated during roadmap creation.
 | UI-08 | Phase 5 | Pending |
 | UI-09 | Phase 5 | Pending |
 | UI-10 | Phase 5 | Pending |
-| INFRA-01 | Phase 1 | Pending |
-| INFRA-02 | Phase 1 | Pending |
-| INFRA-03 | Phase 1 | Pending |
+| INFRA-01 | Phase 1 | Complete |
+| INFRA-02 | Phase 1 | Complete |
+| INFRA-03 | Phase 1 | Complete |
 | INFRA-04 | Phase 4 | Pending |
-| INFRA-05 | Phase 1 | Pending |
-| INFRA-06 | Phase 1 | Pending |
-| INFRA-07 | Phase 1 | Pending |
+| INFRA-05 | Phase 1 | Complete |
+| INFRA-06 | Phase 1 | Complete |
+| INFRA-07 | Phase 1 | Complete |
 | INFRA-08 | Phase 1 | Pending |
 
 **Coverage:**
