@@ -68,10 +68,16 @@ Plans:
   7. User can access and download any historical carousel
   8. Failed generations (timeout after 5 minutes) automatically refund credit
   9. N8N workflow updated to write to Supabase instead of Airtable
-**Plans**: TBD
+**Plans**: 7 plans in 5 waves
 
 Plans:
-- [ ] TBD during phase planning
+- [ ] 03-01-PLAN.md -- Database schema, npm dependencies, TypeScript types, Zod validations, constants
+- [ ] 03-02-PLAN.md -- Backend API layer (generation action, N8N outbound/callback webhooks, status endpoint)
+- [ ] 03-03-PLAN.md -- Generation wizard UI (3-step form: Idea, Template, Style)
+- [ ] 03-04-PLAN.md -- Carousel viewer (polling, success screen, slide navigation, ZIP download)
+- [ ] 03-05-PLAN.md -- History page with pagination
+- [ ] 03-06-PLAN.md -- Sidebar navigation, dashboard CTA, N8N external documentation
+- [ ] 03-07-PLAN.md -- Build verification and human checkpoint
 
 ### Phase 4: Stripe Integration
 **Goal**: Users can subscribe for $29.99/month to receive 10 credits monthly with rollover, manage subscriptions via Stripe portal, and free tier enforces 3 lifetime carousel limit
@@ -118,6 +124,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 |-------|----------------|--------|-----------|
 | 1. Foundation & Infrastructure | 4/4 | Complete | 2026-02-22 |
 | 2. Brand Management | 0/2 | Complete    | 2026-02-23 |
-| 3. Carousel Generation | 0/TBD | Not started | - |
+| 3. Carousel Generation | 0/7 | Not started | - |
 | 4. Stripe Integration | 0/TBD | Not started | - |
 | 5. Polish & Launch | 0/TBD | Not started | - |
