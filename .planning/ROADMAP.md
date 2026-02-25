@@ -93,10 +93,14 @@ Plans:
   7. User can manage subscription (upgrade, cancel) via Stripe Customer Portal
   8. Cancelled subscriptions retain access until period end (cancel_at_period_end)
   9. Generation is prevented when balance is 0 with clear messaging
-**Plans**: TBD
+**Plans**: 5 plans in 4 waves
 
 Plans:
-- [ ] TBD during phase planning
+- [ ] 04-01-PLAN.md — Stripe SDK, database schema (subscriptions + idempotency tables), TypeScript types
+- [ ] 04-02-PLAN.md — Stripe webhook handler (signature verification, idempotent event processing, credit allocation)
+- [ ] 04-03-PLAN.md — Checkout flow, billing page, success page, Customer Portal
+- [ ] 04-04-PLAN.md — Free tier enforcement, tier-aware CreditBalance, upgrade CTAs, billing navigation
+- [ ] 04-05-PLAN.md — Build verification and human checkpoint
 
 ### Phase 5: Polish & Launch
 **Goal**: Public-facing landing page with animations, comprehensive error handling, loading states, and production-ready user experience
@@ -125,5 +129,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | 1. Foundation & Infrastructure | 4/4 | Complete | 2026-02-22 |
 | 2. Brand Management | 0/2 | Complete    | 2026-02-23 |
 | 3. Carousel Generation | 7/7 | Complete    | 2026-02-25 |
-| 4. Stripe Integration | 0/TBD | Not started | - |
+| 4. Stripe Integration | 0/5 | Not started | - |
 | 5. Polish & Launch | 0/TBD | Not started | - |
