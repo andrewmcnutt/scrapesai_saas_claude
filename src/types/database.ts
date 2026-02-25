@@ -68,6 +68,72 @@ export type Database = {
           }
         ]
       }
+      carousels: {
+        Row: {
+          id: string
+          user_id: string
+          status: 'pending' | 'processing' | 'completed' | 'failed' | 'timeout'
+          idea_topic: string
+          idea_key_points: string
+          idea_tone: string
+          template_url: string
+          image_style: string
+          image_urls: string[] | null
+          post_body_text: string | null
+          transaction_id: string | null
+          error_message: string | null
+          created_at: string
+          completed_at: string | null
+        }
+        Insert: {
+          id?: string
+          user_id: string
+          status: 'pending' | 'processing' | 'completed' | 'failed' | 'timeout'
+          idea_topic: string
+          idea_key_points: string
+          idea_tone: string
+          template_url: string
+          image_style: string
+          image_urls?: string[] | null
+          post_body_text?: string | null
+          transaction_id?: string | null
+          error_message?: string | null
+          created_at?: string
+          completed_at?: string | null
+        }
+        Update: {
+          id?: string
+          user_id?: string
+          status?: 'pending' | 'processing' | 'completed' | 'failed' | 'timeout'
+          idea_topic?: string
+          idea_key_points?: string
+          idea_tone?: string
+          template_url?: string
+          image_style?: string
+          image_urls?: string[] | null
+          post_body_text?: string | null
+          transaction_id?: string | null
+          error_message?: string | null
+          created_at?: string
+          completed_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "carousels_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "carousels_transaction_id_fkey"
+            columns: ["transaction_id"]
+            isOneToOne: false
+            referencedRelation: "credit_transactions"
+            referencedColumns: ["id"]
+          }
+        ]
+      }
       credit_transactions: {
         Row: {
           id: string
@@ -116,6 +182,10 @@ export type Database = {
           p_metadata?: Json
         }
         Returns: Json
+      }
+      refund_timeout_jobs: {
+        Args: Record<string, never>
+        Returns: undefined
       }
     }
     Enums: {
