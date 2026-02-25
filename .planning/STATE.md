@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-02-21)
 ## Current Position
 
 Phase: 4 of 5 (Stripe Integration)
-Plan: 3 of 5 in current phase
-Status: In progress
-Last activity: 2026-02-25 — Completed 04-03-PLAN.md (Stripe checkout + billing UI)
+Plan: 5 of 5 in current phase
+Status: Phase 4 complete
+Last activity: 2026-02-25 — Completed 04-05-PLAN.md (Build verification + human approval)
 
-Progress: [████████░░] 80%
+Progress: [██████████] 100%
 
 ## Performance Metrics
 
@@ -51,6 +51,7 @@ Progress: [████████░░] 80%
 | Phase 04-stripe-integration P02 | 10 | 1 tasks | 2 files |
 | Phase 04-stripe-integration P03 | 5 | 2 tasks | 4 files |
 | Phase 04-stripe-integration P04 | 3 | 2 tasks | 5 files |
+| Phase 04-stripe-integration P05 | 20 | 2 tasks | 0 files |
 
 ## Accumulated Context
 
@@ -110,6 +111,8 @@ Recent decisions affecting current work:
 - [Phase 04-03]: Stripe API v2026-01-28.clover breaking changes fixed in webhook handler: period timestamps on SubscriptionItem, invoice subscription ref in parent.subscription_details
 - [Phase 04-04]: CreditBalance uses its own direct Supabase queries (not getUserSubscriptionStatus) since it is a use client component — server utility takes supabase client param
 - [Phase 04-04]: needsUpgrade flag added to generation action return: true for free-tier out of credits, false for paid-but-empty — enables wizard to show correct upgrade vs refresh-billing message
+- [Phase 04-stripe-integration]: deduct_credit Postgres function cannot combine FOR UPDATE with SUM() — split into separate PERFORM FOR UPDATE then SELECT SUM() statements; user fixed directly in Supabase SQL Editor
+- [Phase 04-stripe-integration]: Phase 4 Stripe integration approved complete by human verification: Stripe Checkout with test card, Pro Plan activation, Customer Portal, credit deduction on generation, and clean production build all confirmed
 
 ### Pending Todos
 
@@ -134,7 +137,7 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-02-25 (stripe integration - credit enforcement + upgrade UI)
-Stopped at: Completed 04-04-PLAN.md
+Last session: 2026-02-25 (stripe integration - end-to-end verification + human approval)
+Stopped at: Completed 04-05-PLAN.md — Phase 4 Stripe Integration complete
 Resume file: None
-Next action: Phase 4 Plan 5 - End-to-end Stripe verification
+Next action: Phase 5 - Launch Polish
