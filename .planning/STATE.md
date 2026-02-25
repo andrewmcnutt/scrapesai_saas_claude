@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-02-21)
 
 **Core value:** Non-designers can quickly create professional, branded LinkedIn carousels that match their voice and visual identity
-**Current focus:** Phase 3: Carousel Generation
+**Current focus:** Phase 4: Stripe Integration
 
 ## Current Position
 
-Phase: 3 of 5 (Carousel Generation)
-Plan: 7 of 7 in current phase
-Status: Phase complete
-Last activity: 2026-02-25 — Completed 03-07-PLAN.md (verification and build health)
+Phase: 4 of 5 (Stripe Integration)
+Plan: 1 of 5 in current phase
+Status: In progress
+Last activity: 2026-02-25 — Completed 04-01-PLAN.md (Stripe SDK + database schema)
 
-Progress: [████████░░] 70%
+Progress: [████████░░] 76%
 
 ## Performance Metrics
 
@@ -47,6 +47,7 @@ Progress: [████████░░] 70%
 | Phase 03 P04 | 4 | 2 tasks | 8 files |
 | Phase 03 P05 | 2 | 2 tasks | 4 files |
 | Phase 03 P06 | 2 | 1 tasks | 2 files |
+| Phase 04-stripe-integration P01 | 8 | 2 tasks | 6 files |
 
 ## Accumulated Context
 
@@ -95,6 +96,9 @@ Recent decisions affecting current work:
 - [Phase 03-07]: Insufficient credits error on Generate click is expected behavior (credit system working correctly)
 - [Phase 03-07]: N8N E2E test deferred until N8N instance is running; all code paths verified via production build
 - [Phase 03-07]: Phase 3 carousel generation approved complete by human verification
+- [Phase 04-stripe-integration]: Stripe SDK v20.3.1 uses API version 2026-01-28.clover (plan specified 2024-11-20 — updated to match installed version)
+- [Phase 04-stripe-integration]: No INSERT/UPDATE/DELETE RLS policies on subscriptions — all writes via service role key from webhook handler to prevent clients spoofing subscription state
+- [Phase 04-stripe-integration]: seed_free_credits() uses SECURITY DEFINER to allow cross-schema insert from auth.users trigger into RLS-protected credit_transactions (CRED-01: 3 credits on signup)
 
 ### Pending Todos
 
@@ -119,7 +123,7 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-02-25 (carousel generation - verification and build health)
-Stopped at: Completed 03-07-PLAN.md
+Last session: 2026-02-25 (stripe integration - SDK + database schema)
+Stopped at: Completed 04-01-PLAN.md
 Resume file: None
-Next action: Begin Phase 4 - Stripe Payments
+Next action: Phase 4 Plan 2 - Stripe webhook handler

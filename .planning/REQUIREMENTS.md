@@ -53,7 +53,7 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Credit System
 
-- [ ] **CRED-01**: Free tier users receive 3 total carousel generations (lifetime, not monthly)
+- [x] **CRED-01**: Free tier users receive 3 total carousel generations (lifetime, not monthly)
 - [ ] **CRED-02**: Paid tier users receive 10 credits per month with rollover
 - [ ] **CRED-03**: Credits deduct when user clicks Generate (not on download)
 - [ ] **CRED-04**: Unused credits roll over month-to-month for paid users
@@ -61,7 +61,7 @@ Requirements for initial release. Each maps to roadmap phases.
 - [x] **CRED-06**: Credit transactions stored as ledger (INSERT only, never UPDATE balance)
 - [x] **CRED-07**: Balance calculated as SUM(transactions) for audit trail
 - [x] **CRED-08**: Credits cannot go negative (CHECK constraint in database)
-- [ ] **CRED-09**: Monthly credit allocation tracks billing_period_id for idempotency
+- [x] **CRED-09**: Monthly credit allocation tracks billing_period_id for idempotency
 - [ ] **CRED-10**: System prevents generation when balance is 0
 
 ### Stripe Payments & Subscriptions
@@ -112,7 +112,7 @@ Requirements for initial release. Each maps to roadmap phases.
 - [x] **INFRA-01**: Application deployed to Vercel
 - [x] **INFRA-02**: Version control managed via GitHub
 - [x] **INFRA-03**: Supabase project configured for production (auth, database, RLS)
-- [ ] **INFRA-04**: Stripe account configured with production webhooks
+- [x] **INFRA-04**: Stripe account configured with production webhooks
 - [x] **INFRA-05**: Environment variables secured (webhook secrets, service role keys, Stripe keys)
 - [x] **INFRA-06**: Database migrations version controlled
 - [x] **INFRA-07**: RLS enabled on all tables with indexed policy columns
@@ -196,7 +196,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | HIST-04 | Phase 3 | Complete |
 | HIST-05 | Phase 3 | Complete |
 | HIST-06 | Phase 3 | Complete |
-| CRED-01 | Phase 4 | Pending |
+| CRED-01 | Phase 4 | Complete |
 | CRED-02 | Phase 4 | Pending |
 | CRED-03 | Phase 4 | Pending |
 | CRED-04 | Phase 4 | Pending |
@@ -204,7 +204,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | CRED-06 | Phase 1 | Complete |
 | CRED-07 | Phase 1 | Complete |
 | CRED-08 | Phase 1 | Complete |
-| CRED-09 | Phase 4 | Pending |
+| CRED-09 | Phase 4 | Complete |
 | CRED-10 | Phase 4 | Pending |
 | PAY-01 | Phase 4 | Pending |
 | PAY-02 | Phase 4 | Pending |
@@ -243,7 +243,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | INFRA-01 | Phase 1 | Complete |
 | INFRA-02 | Phase 1 | Complete |
 | INFRA-03 | Phase 1 | Complete |
-| INFRA-04 | Phase 4 | Pending |
+| INFRA-04 | Phase 4 | Complete |
 | INFRA-05 | Phase 1 | Complete |
 | INFRA-06 | Phase 1 | Complete |
 | INFRA-07 | Phase 1 | Complete |
