@@ -37,12 +37,16 @@ DECLARE
   v_current_balance INTEGER;
   v_new_transaction_id UUID;
 BEGIN
-  -- Lock user's transactions (prevents race conditions)
+  -- Lock user's transaction rows (prevents race conditions)
+  PERFORM id FROM credit_transactions
+  WHERE user_id = p_user_id
+  FOR UPDATE;
+
+  -- Now calculate balance (separate from FOR UPDATE — Postgres disallows aggregates with FOR UPDATE)
   SELECT COALESCE(SUM(amount), 0)
   INTO v_current_balance
   FROM credit_transactions
-  WHERE user_id = p_user_id
-  FOR UPDATE;
+  WHERE user_id = p_user_id;
 
   -- Check sufficient balance
   IF v_current_balance < p_amount THEN
