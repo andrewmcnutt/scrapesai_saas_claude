@@ -12,6 +12,20 @@ export default async function DashboardPage() {
     <div>
       <h1 className="text-3xl font-bold mb-8">Dashboard</h1>
 
+      {/* Generate Carousel CTA */}
+      <div className="bg-gradient-to-r from-indigo-600 to-blue-500 p-8 rounded-xl shadow-md mb-6">
+        <h2 className="text-2xl font-bold text-white mb-2">Create a New Carousel</h2>
+        <p className="text-indigo-100 mb-6">
+          Turn your ideas into professional LinkedIn carousels in minutes
+        </p>
+        <Link
+          href="/generate"
+          className="inline-block px-6 py-3 bg-white text-indigo-700 font-semibold rounded-lg hover:bg-indigo-50 transition-colors shadow-sm"
+        >
+          Generate Carousel →
+        </Link>
+      </div>
+
       {!isComplete && (
         <div className="bg-yellow-50 border border-yellow-200 p-6 rounded-lg mb-6">
           <h2 className="text-lg font-semibold text-yellow-900 mb-2">
@@ -42,9 +56,12 @@ export default async function DashboardPage() {
 
         <div className="bg-white p-6 rounded-lg shadow">
           <h2 className="text-lg font-semibold mb-2">Quick Actions</h2>
-          <p className="text-sm text-gray-600">
-            Brand setup and carousel generation coming in Phase 2 & 3
-          </p>
+          <Link
+            href="/history"
+            className="text-sm text-indigo-600 hover:underline"
+          >
+            View carousel history →
+          </Link>
         </div>
       </div>
     </div>
