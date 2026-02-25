@@ -5,22 +5,22 @@
 See: .planning/PROJECT.md (updated 2026-02-21)
 
 **Core value:** Non-designers can quickly create professional, branded LinkedIn carousels that match their voice and visual identity
-**Current focus:** Phase 2: Brand Management
+**Current focus:** Phase 3: Carousel Generation
 
 ## Current Position
 
-Phase: 2 of 5 (Brand Management)
-Plan: 2 of 2 in current phase
-Status: Phase complete
-Last activity: 2026-02-22 — Completed 02-02-PLAN.md (brand settings UI)
+Phase: 3 of 5 (Carousel Generation)
+Plan: 1 of 7 in current phase
+Status: In progress
+Last activity: 2026-02-24 — Completed 03-01-PLAN.md (database foundation and shared dependencies)
 
-Progress: [████░░░░░░] 33%
+Progress: [█████░░░░░] 40%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 6
-- Average duration: 16 minutes
+- Total plans completed: 7
+- Average duration: 15 minutes
 - Total execution time: 1.8 hours
 
 **By Phase:**
@@ -29,6 +29,7 @@ Progress: [████░░░░░░] 33%
 |-------|-------|-------|----------|
 | 01    | 4     | 66 min | 17 min  |
 | 02    | 2     | 31 min | 16 min  |
+| 03    | 1     | 3 min  | 3 min   |
 
 **Recent Plans:**
 
@@ -40,6 +41,7 @@ Progress: [████░░░░░░] 33%
 | Phase 01 P04 | 46 | 1 tasks | 3 files |
 | Phase 02 P01 | 11 | 2 tasks | 2 files |
 | Phase 02 P02 | 20 | 3 tasks | 6 files |
+| Phase 03 P01 | 3 min | 2 tasks | 5 files |
 
 ## Accumulated Context
 
@@ -68,6 +70,9 @@ Recent decisions affecting current work:
 - [Phase 02]: Use native HTML5 color inputs instead of external library for zero dependencies
 - [Phase 02]: Use Supabase upsert with onConflict: 'user_id' for atomic insert-or-update
 - [Phase 02]: Check default values (not just existence) to detect profile completion
+- [Phase 03-01]: No UPDATE RLS policy for carousels - status/result updates exclusively via service role key from N8N webhook to prevent result spoofing
+- [Phase 03-01]: refund_timeout_jobs SECURITY DEFINER function handles multiple concurrent timeouts atomically per job with completed_at guard against duplicate refunds
+- [Phase 03-01]: CAROUSEL_STATUS const (not Postgres enum) provides type safety without additional migration complexity
 
 ### Pending Todos
 
@@ -92,7 +97,7 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-02-22 (brand management - UI)
-Stopped at: Completed 02-02-PLAN.md
+Last session: 2026-02-24 (carousel generation - database foundation)
+Stopped at: Completed 03-01-PLAN.md
 Resume file: None
-Next action: Phase 2 complete - ready for Phase 3 (carousel generation)
+Next action: Continue Phase 3 - execute 03-02-PLAN.md (generation API and wizard UI)
