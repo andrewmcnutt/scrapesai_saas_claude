@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-02-21)
 ## Current Position
 
 Phase: 3 of 5 (Carousel Generation)
-Plan: 3 of 7 in current phase
+Plan: 4 of 7 in current phase
 Status: In progress
-Last activity: 2026-02-25 — Completed 03-03-PLAN.md (generation wizard UI)
+Last activity: 2026-02-25 — Completed 03-04-PLAN.md (carousel viewing experience)
 
-Progress: [█████░░░░░] 43%
+Progress: [█████░░░░░] 46%
 
 ## Performance Metrics
 
@@ -44,6 +44,7 @@ Progress: [█████░░░░░] 43%
 | Phase 03 P01 | 3 min | 2 tasks | 5 files |
 | Phase 03 P02 | 8 min | 2 tasks | 4 files |
 | Phase 03-carousel-generation P03 | 2 | 2 tasks | 6 files |
+| Phase 03 P04 | 4 | 2 tasks | 8 files |
 
 ## Accumulated Context
 
@@ -80,6 +81,9 @@ Recent decisions affecting current work:
 - [Phase 03-02]: Service role key (bypasses RLS) used in N8N callback handler — no user session available in server-to-server context
 - [Phase 03-03]: Custom image style: imageStyle='custom' + customStyleText stored separately, merged to effectiveImageStyle at submit time
 - [Phase 03-03]: initiateGeneration called directly (not via useActionState) to allow imperative router.push redirect on success
+- [Phase 03-04]: Client-side state machine in page.tsx manages polling->success->viewing transitions for async carousel generation
+- [Phase 03-04]: pollCarouselStatus throws to trigger backOff retry on pending/processing; returns on terminal states (completed/failed/timeout)
+- [Phase 03-04]: Swiper dual-instance pattern: main viewer + thumbnail synced via thumbsSwiper state ref with destroyed guard
 
 ### Pending Todos
 
@@ -104,7 +108,7 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-02-25 (carousel generation - generation wizard UI)
-Stopped at: Completed 03-03-PLAN.md
+Last session: 2026-02-25 (carousel generation - carousel viewing experience)
+Stopped at: Completed 03-04-PLAN.md
 Resume file: None
-Next action: Continue Phase 3 - execute 03-04-PLAN.md
+Next action: Continue Phase 3 - execute 03-05-PLAN.md
