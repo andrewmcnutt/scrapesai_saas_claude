@@ -45,6 +45,7 @@ Progress: [███████░░░] 60%
 | Phase 03 P02 | 8 min | 2 tasks | 4 files |
 | Phase 03-carousel-generation P03 | 2 | 2 tasks | 6 files |
 | Phase 03 P04 | 4 | 2 tasks | 8 files |
+| Phase 03 P05 | 2 | 2 tasks | 4 files |
 | Phase 03 P06 | 2 | 1 tasks | 2 files |
 
 ## Accumulated Context
@@ -85,6 +86,9 @@ Recent decisions affecting current work:
 - [Phase 03-04]: Client-side state machine in page.tsx manages polling->success->viewing transitions for async carousel generation
 - [Phase 03-04]: pollCarouselStatus throws to trigger backOff retry on pending/processing; returns on terminal states (completed/failed/timeout)
 - [Phase 03-04]: Swiper dual-instance pattern: main viewer + thumbnail synced via thumbsSwiper state ref with destroyed guard
+- [Phase 03-05]: HistoryCard is client component for download interactivity; page.tsx and HistoryList remain server components
+- [Phase 03-05]: Separate Supabase count query (head: true) avoids fetching all rows just for pagination math
+- [Phase 03-05]: extractTemplateName parses template_url pathname to derive display-friendly name without storing separately
 - [Phase 03-06]: Generate and History nav links added as primary navigation items in logical workflow order
 - [Phase 03-06]: Dashboard CTA uses indigo gradient to make carousel generation the most prominent action
 - [Phase 03-06]: GEN-14 refund_timeout_jobs function created in Plan 01 - scheduling via pg_cron or Vercel cron is operational task

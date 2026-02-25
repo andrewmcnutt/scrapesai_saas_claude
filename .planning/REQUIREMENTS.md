@@ -45,11 +45,11 @@ Requirements for initial release. Each maps to roadmap phases.
 ### Carousel History
 
 - [x] **HIST-01**: All generated carousels auto-save to user's history
-- [ ] **HIST-02**: User can view history page showing all past carousels
+- [x] **HIST-02**: User can view history page showing all past carousels
 - [x] **HIST-03**: History displays original idea, selected template, selected style, generation timestamp
-- [ ] **HIST-04**: User can view any historical carousel with full slides and post body
-- [ ] **HIST-05**: User can download historical carousels as zip
-- [ ] **HIST-06**: History is paginated (infinite scroll or page-based navigation)
+- [x] **HIST-04**: User can view any historical carousel with full slides and post body
+- [x] **HIST-05**: User can download historical carousels as zip
+- [x] **HIST-06**: History is paginated (infinite scroll or page-based navigation)
 
 ### Credit System
 
@@ -191,11 +191,11 @@ Which phases cover which requirements. Updated during roadmap creation.
 | GEN-14 | Phase 3 | Complete |
 | GEN-15 | Phase 3 | Complete |
 | HIST-01 | Phase 3 | Complete |
-| HIST-02 | Phase 3 | Pending |
+| HIST-02 | Phase 3 | Complete |
 | HIST-03 | Phase 3 | Complete |
-| HIST-04 | Phase 3 | Pending |
-| HIST-05 | Phase 3 | Pending |
-| HIST-06 | Phase 3 | Pending |
+| HIST-04 | Phase 3 | Complete |
+| HIST-05 | Phase 3 | Complete |
+| HIST-06 | Phase 3 | Complete |
 | CRED-01 | Phase 4 | Pending |
 | CRED-02 | Phase 4 | Pending |
 | CRED-03 | Phase 4 | Pending |
