@@ -50,6 +50,7 @@ Progress: [████████░░] 80%
 | Phase 04-stripe-integration P01 | 8 | 2 tasks | 6 files |
 | Phase 04-stripe-integration P02 | 10 | 1 tasks | 2 files |
 | Phase 04-stripe-integration P03 | 5 | 2 tasks | 4 files |
+| Phase 04-stripe-integration P04 | 3 | 2 tasks | 5 files |
 
 ## Accumulated Context
 
@@ -107,6 +108,8 @@ Recent decisions affecting current work:
 - [Phase 04-03]: Success page queries Stripe directly (checkout.sessions.retrieve) to handle webhook race condition — confirmed payment independent of local DB state (PAY-11)
 - [Phase 04-03]: Existing Stripe customers reused via stripe_customer_id lookup before creating checkout session — prevents duplicate customer records
 - [Phase 04-03]: Stripe API v2026-01-28.clover breaking changes fixed in webhook handler: period timestamps on SubscriptionItem, invoice subscription ref in parent.subscription_details
+- [Phase 04-04]: CreditBalance uses its own direct Supabase queries (not getUserSubscriptionStatus) since it is a use client component — server utility takes supabase client param
+- [Phase 04-04]: needsUpgrade flag added to generation action return: true for free-tier out of credits, false for paid-but-empty — enables wizard to show correct upgrade vs refresh-billing message
 
 ### Pending Todos
 
@@ -131,7 +134,7 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-02-25 (stripe integration - checkout + billing UI)
-Stopped at: Completed 04-03-PLAN.md
+Last session: 2026-02-25 (stripe integration - credit enforcement + upgrade UI)
+Stopped at: Completed 04-04-PLAN.md
 Resume file: None
-Next action: Phase 4 Plan 4 - Credit enforcement (free tier limit + upgrade prompts)
+Next action: Phase 4 Plan 5 - End-to-end Stripe verification

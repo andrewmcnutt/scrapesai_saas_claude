@@ -55,18 +55,18 @@ Requirements for initial release. Each maps to roadmap phases.
 
 - [x] **CRED-01**: Free tier users receive 3 total carousel generations (lifetime, not monthly)
 - [x] **CRED-02**: Paid tier users receive 10 credits per month with rollover
-- [ ] **CRED-03**: Credits deduct when user clicks Generate (not on download)
+- [x] **CRED-03**: Credits deduct when user clicks Generate (not on download)
 - [x] **CRED-04**: Unused credits roll over month-to-month for paid users
-- [ ] **CRED-05**: Dashboard displays current credit balance prominently
+- [x] **CRED-05**: Dashboard displays current credit balance prominently
 - [x] **CRED-06**: Credit transactions stored as ledger (INSERT only, never UPDATE balance)
 - [x] **CRED-07**: Balance calculated as SUM(transactions) for audit trail
 - [x] **CRED-08**: Credits cannot go negative (CHECK constraint in database)
 - [x] **CRED-09**: Monthly credit allocation tracks billing_period_id for idempotency
-- [ ] **CRED-10**: System prevents generation when balance is 0
+- [x] **CRED-10**: System prevents generation when balance is 0
 
 ### Stripe Payments & Subscriptions
 
-- [ ] **PAY-01**: Free tier enforced (3 total carousels, then upgrade prompt)
+- [x] **PAY-01**: Free tier enforced (3 total carousels, then upgrade prompt)
 - [x] **PAY-02**: Paid tier costs $29.99/month
 - [x] **PAY-03**: User can subscribe via Stripe Checkout from dashboard
 - [x] **PAY-04**: Stripe webhook verifies signatures for all events (stripe.webhooks.constructEvent)
@@ -198,15 +198,15 @@ Which phases cover which requirements. Updated during roadmap creation.
 | HIST-06 | Phase 3 | Complete |
 | CRED-01 | Phase 4 | Complete |
 | CRED-02 | Phase 4 | Complete |
-| CRED-03 | Phase 4 | Pending |
+| CRED-03 | Phase 4 | Complete |
 | CRED-04 | Phase 4 | Complete |
-| CRED-05 | Phase 4 | Pending |
+| CRED-05 | Phase 4 | Complete |
 | CRED-06 | Phase 1 | Complete |
 | CRED-07 | Phase 1 | Complete |
 | CRED-08 | Phase 1 | Complete |
 | CRED-09 | Phase 4 | Complete |
-| CRED-10 | Phase 4 | Pending |
-| PAY-01 | Phase 4 | Pending |
+| CRED-10 | Phase 4 | Complete |
+| PAY-01 | Phase 4 | Complete |
 | PAY-02 | Phase 4 | Complete |
 | PAY-03 | Phase 4 | Complete |
 | PAY-04 | Phase 4 | Complete |
