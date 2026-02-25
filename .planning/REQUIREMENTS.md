@@ -30,14 +30,14 @@ Requirements for initial release. Each maps to roadmap phases.
 - [x] **GEN-02**: User can select carousel template from 5-6 options (template URLs provided externally)
 - [x] **GEN-03**: User can select image style from 4 presets (Technical Annotation, Realism Notebook, White Board Diagram, Comic Strip Storyboard)
 - [ ] **GEN-04**: User can enter custom image style as free text
-- [ ] **GEN-05**: System sends idea, template URL, image style, and brand data to N8N webhook
+- [x] **GEN-05**: System sends idea, template URL, image style, and brand data to N8N webhook
 - [x] **GEN-06**: System deducts 1 credit atomically before calling N8N (PostgreSQL RPC with SELECT FOR UPDATE)
 - [ ] **GEN-07**: N8N workflow processes request and returns carousel image URLs (5-10 slides from ImageB) and post body text
 - [ ] **GEN-08**: Generated carousel displays on dashboard with all slides visible
 - [ ] **GEN-09**: Generated post body text displays with carousel
 - [ ] **GEN-10**: User can download all carousel images as single zip file
 - [ ] **GEN-11**: User can regenerate carousel with same settings (costs another credit)
-- [ ] **GEN-12**: Generation handles N8N async processing (60-180s) without frontend timeout
+- [x] **GEN-12**: Generation handles N8N async processing (60-180s) without frontend timeout
 - [ ] **GEN-13**: Generation status updates in UI (polling with exponential backoff: 2s, 4s, 8s intervals)
 - [ ] **GEN-14**: Failed generations (timeout after 5 minutes) refund credit automatically
 - [ ] **GEN-15**: Generate button is debounced to prevent double-click double-spend
@@ -84,11 +84,11 @@ Requirements for initial release. Each maps to roadmap phases.
 ### N8N Workflow Integration
 
 - [x] **N8N-01**: Existing N8N workflow updated to write to Supabase (not Airtable)
-- [ ] **N8N-02**: Generation endpoint sends POST to N8N with: idea, template_url, image_style, brand data
-- [ ] **N8N-03**: N8N webhook returns 202 Accepted with job_id for async processing
-- [ ] **N8N-04**: N8N callback webhook receives: job_id, image_urls[], post_body_text
-- [ ] **N8N-05**: N8N callback verifies HMAC signature or API key
-- [ ] **N8N-06**: Callback updates carousel record from status='pending' to status='completed'
+- [x] **N8N-02**: Generation endpoint sends POST to N8N with: idea, template_url, image_style, brand data
+- [x] **N8N-03**: N8N webhook returns 202 Accepted with job_id for async processing
+- [x] **N8N-04**: N8N callback webhook receives: job_id, image_urls[], post_body_text
+- [x] **N8N-05**: N8N callback verifies HMAC signature or API key
+- [x] **N8N-06**: Callback updates carousel record from status='pending' to status='completed'
 - [ ] **N8N-07**: System retries callback failures with exponential backoff
 - [ ] **N8N-08**: Daily reconciliation job compares ImageB uploads vs database records
 - [ ] **N8N-09**: Orphaned images (exist in ImageB but not database) trigger manual review alert
@@ -179,14 +179,14 @@ Which phases cover which requirements. Updated during roadmap creation.
 | GEN-02 | Phase 3 | Complete |
 | GEN-03 | Phase 3 | Complete |
 | GEN-04 | Phase 3 | Pending |
-| GEN-05 | Phase 3 | Pending |
+| GEN-05 | Phase 3 | Complete |
 | GEN-06 | Phase 3 | Complete |
 | GEN-07 | Phase 3 | Pending |
 | GEN-08 | Phase 3 | Pending |
 | GEN-09 | Phase 3 | Pending |
 | GEN-10 | Phase 3 | Pending |
 | GEN-11 | Phase 3 | Pending |
-| GEN-12 | Phase 3 | Pending |
+| GEN-12 | Phase 3 | Complete |
 | GEN-13 | Phase 3 | Pending |
 | GEN-14 | Phase 3 | Pending |
 | GEN-15 | Phase 3 | Pending |
@@ -221,11 +221,11 @@ Which phases cover which requirements. Updated during roadmap creation.
 | PAY-13 | Phase 4 | Pending |
 | PAY-14 | Phase 4 | Pending |
 | N8N-01 | Phase 3 | Complete |
-| N8N-02 | Phase 3 | Pending |
-| N8N-03 | Phase 3 | Pending |
-| N8N-04 | Phase 3 | Pending |
-| N8N-05 | Phase 3 | Pending |
-| N8N-06 | Phase 3 | Pending |
+| N8N-02 | Phase 3 | Complete |
+| N8N-03 | Phase 3 | Complete |
+| N8N-04 | Phase 3 | Complete |
+| N8N-05 | Phase 3 | Complete |
+| N8N-06 | Phase 3 | Complete |
 | N8N-07 | Phase 3 | Pending |
 | N8N-08 | Phase 3 | Pending |
 | N8N-09 | Phase 3 | Pending |
