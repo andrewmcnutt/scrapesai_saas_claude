@@ -54,9 +54,9 @@ Requirements for initial release. Each maps to roadmap phases.
 ### Credit System
 
 - [x] **CRED-01**: Free tier users receive 3 total carousel generations (lifetime, not monthly)
-- [ ] **CRED-02**: Paid tier users receive 10 credits per month with rollover
+- [x] **CRED-02**: Paid tier users receive 10 credits per month with rollover
 - [ ] **CRED-03**: Credits deduct when user clicks Generate (not on download)
-- [ ] **CRED-04**: Unused credits roll over month-to-month for paid users
+- [x] **CRED-04**: Unused credits roll over month-to-month for paid users
 - [ ] **CRED-05**: Dashboard displays current credit balance prominently
 - [x] **CRED-06**: Credit transactions stored as ledger (INSERT only, never UPDATE balance)
 - [x] **CRED-07**: Balance calculated as SUM(transactions) for audit trail
@@ -69,17 +69,17 @@ Requirements for initial release. Each maps to roadmap phases.
 - [ ] **PAY-01**: Free tier enforced (3 total carousels, then upgrade prompt)
 - [ ] **PAY-02**: Paid tier costs $29.99/month
 - [ ] **PAY-03**: User can subscribe via Stripe Checkout from dashboard
-- [ ] **PAY-04**: Stripe webhook verifies signatures for all events (stripe.webhooks.constructEvent)
-- [ ] **PAY-05**: Stripe webhook handlers are idempotent (log event.id, skip if exists)
-- [ ] **PAY-06**: invoice.paid event allocates 10 credits via ledger transaction
-- [ ] **PAY-07**: customer.subscription.created event creates subscription record
-- [ ] **PAY-08**: customer.subscription.updated event syncs subscription changes
-- [ ] **PAY-09**: customer.subscription.deleted event marks subscription cancelled
-- [ ] **PAY-10**: Cancelled subscriptions retain access until period end (cancel_at_period_end)
+- [x] **PAY-04**: Stripe webhook verifies signatures for all events (stripe.webhooks.constructEvent)
+- [x] **PAY-05**: Stripe webhook handlers are idempotent (log event.id, skip if exists)
+- [x] **PAY-06**: invoice.paid event allocates 10 credits via ledger transaction
+- [x] **PAY-07**: customer.subscription.created event creates subscription record
+- [x] **PAY-08**: customer.subscription.updated event syncs subscription changes
+- [x] **PAY-09**: customer.subscription.deleted event marks subscription cancelled
+- [x] **PAY-10**: Cancelled subscriptions retain access until period end (cancel_at_period_end)
 - [ ] **PAY-11**: Checkout success page syncs subscription immediately before rendering (queries Stripe API)
 - [ ] **PAY-12**: User can manage subscription via Stripe Customer Portal
-- [ ] **PAY-13**: Webhook handlers return 200 immediately, process async
-- [ ] **PAY-14**: Failed payment prevents credit allocation but doesn't revoke existing credits
+- [x] **PAY-13**: Webhook handlers return 200 immediately, process async
+- [x] **PAY-14**: Failed payment prevents credit allocation but doesn't revoke existing credits
 
 ### N8N Workflow Integration
 
@@ -197,9 +197,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | HIST-05 | Phase 3 | Complete |
 | HIST-06 | Phase 3 | Complete |
 | CRED-01 | Phase 4 | Complete |
-| CRED-02 | Phase 4 | Pending |
+| CRED-02 | Phase 4 | Complete |
 | CRED-03 | Phase 4 | Pending |
-| CRED-04 | Phase 4 | Pending |
+| CRED-04 | Phase 4 | Complete |
 | CRED-05 | Phase 4 | Pending |
 | CRED-06 | Phase 1 | Complete |
 | CRED-07 | Phase 1 | Complete |
@@ -209,17 +209,17 @@ Which phases cover which requirements. Updated during roadmap creation.
 | PAY-01 | Phase 4 | Pending |
 | PAY-02 | Phase 4 | Pending |
 | PAY-03 | Phase 4 | Pending |
-| PAY-04 | Phase 4 | Pending |
-| PAY-05 | Phase 4 | Pending |
-| PAY-06 | Phase 4 | Pending |
-| PAY-07 | Phase 4 | Pending |
-| PAY-08 | Phase 4 | Pending |
-| PAY-09 | Phase 4 | Pending |
-| PAY-10 | Phase 4 | Pending |
+| PAY-04 | Phase 4 | Complete |
+| PAY-05 | Phase 4 | Complete |
+| PAY-06 | Phase 4 | Complete |
+| PAY-07 | Phase 4 | Complete |
+| PAY-08 | Phase 4 | Complete |
+| PAY-09 | Phase 4 | Complete |
+| PAY-10 | Phase 4 | Complete |
 | PAY-11 | Phase 4 | Pending |
 | PAY-12 | Phase 4 | Pending |
-| PAY-13 | Phase 4 | Pending |
-| PAY-14 | Phase 4 | Pending |
+| PAY-13 | Phase 4 | Complete |
+| PAY-14 | Phase 4 | Complete |
 | N8N-01 | Phase 3 | Complete |
 | N8N-02 | Phase 3 | Complete |
 | N8N-03 | Phase 3 | Complete |

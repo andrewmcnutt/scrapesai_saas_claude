@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-02-21)
 ## Current Position
 
 Phase: 4 of 5 (Stripe Integration)
-Plan: 1 of 5 in current phase
+Plan: 2 of 5 in current phase
 Status: In progress
-Last activity: 2026-02-25 — Completed 04-01-PLAN.md (Stripe SDK + database schema)
+Last activity: 2026-02-25 — Completed 04-02-PLAN.md (Stripe webhook handler)
 
-Progress: [████████░░] 76%
+Progress: [████████░░] 78%
 
 ## Performance Metrics
 
@@ -48,6 +48,7 @@ Progress: [████████░░] 76%
 | Phase 03 P05 | 2 | 2 tasks | 4 files |
 | Phase 03 P06 | 2 | 1 tasks | 2 files |
 | Phase 04-stripe-integration P01 | 8 | 2 tasks | 6 files |
+| Phase 04-stripe-integration P02 | 10 | 1 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -99,6 +100,9 @@ Recent decisions affecting current work:
 - [Phase 04-stripe-integration]: Stripe SDK v20.3.1 uses API version 2026-01-28.clover (plan specified 2024-11-20 — updated to match installed version)
 - [Phase 04-stripe-integration]: No INSERT/UPDATE/DELETE RLS policies on subscriptions — all writes via service role key from webhook handler to prevent clients spoofing subscription state
 - [Phase 04-stripe-integration]: seed_free_credits() uses SECURITY DEFINER to allow cross-schema insert from auth.users trigger into RLS-protected credit_transactions (CRED-01: 3 credits on signup)
+- [Phase 04-stripe-integration]: Stripe API v2026-01-28.clover moved current_period_start/end to subscription.items.data[0] and invoice.subscription to invoice.parent.subscription_details.subscription — webhook handler updated accordingly
+- [Phase 04-stripe-integration]: Stripe client made lazy-initialized via Proxy pattern to allow npm run build without STRIPE_SECRET_KEY — defers instantiation to request time
+- [Phase 04-stripe-integration]: Two-layer webhook idempotency: stripe_processed_events (event-level) + invoice_id in credit_transactions metadata (credit-level) for crash-safe double allocation prevention
 
 ### Pending Todos
 
@@ -123,7 +127,7 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-02-25 (stripe integration - SDK + database schema)
-Stopped at: Completed 04-01-PLAN.md
+Last session: 2026-02-25 (stripe integration - webhook handler)
+Stopped at: Completed 04-02-PLAN.md
 Resume file: None
-Next action: Phase 4 Plan 2 - Stripe webhook handler
+Next action: Phase 4 Plan 3 - Stripe checkout session + billing UI
