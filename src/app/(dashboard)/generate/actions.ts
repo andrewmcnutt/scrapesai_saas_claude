@@ -72,8 +72,29 @@ export async function initiateGeneration(
 
   if (deductionError || !deductionResult) {
     console.error('Credit deduction failed:', deductionError)
+
+    // Determine tier-aware error message based on subscription status
+    const { data: subscription } = await supabase
+      .from('subscriptions')
+      .select('status')
+      .eq('user_id', user.id)
+      .maybeSingle()
+
+    const isActiveSub =
+      subscription?.status === 'active' || subscription?.status === 'trialing'
+
+    if (!isActiveSub) {
+      // Free tier: no active subscription — show upgrade prompt
+      return {
+        message: "You've used all 3 free carousels. Upgrade to Pro for 10 credits/month.",
+        needsUpgrade: true,
+      }
+    }
+
+    // Active subscription but out of credits — billing cycle refresh message
     return {
-      message: 'Insufficient credits. Please upgrade your plan.',
+      message: 'No credits remaining. Your credits will refresh on your next billing date.',
+      needsUpgrade: false,
     }
   }
 
