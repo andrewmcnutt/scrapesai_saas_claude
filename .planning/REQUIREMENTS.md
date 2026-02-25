@@ -67,8 +67,8 @@ Requirements for initial release. Each maps to roadmap phases.
 ### Stripe Payments & Subscriptions
 
 - [ ] **PAY-01**: Free tier enforced (3 total carousels, then upgrade prompt)
-- [ ] **PAY-02**: Paid tier costs $29.99/month
-- [ ] **PAY-03**: User can subscribe via Stripe Checkout from dashboard
+- [x] **PAY-02**: Paid tier costs $29.99/month
+- [x] **PAY-03**: User can subscribe via Stripe Checkout from dashboard
 - [x] **PAY-04**: Stripe webhook verifies signatures for all events (stripe.webhooks.constructEvent)
 - [x] **PAY-05**: Stripe webhook handlers are idempotent (log event.id, skip if exists)
 - [x] **PAY-06**: invoice.paid event allocates 10 credits via ledger transaction
@@ -76,8 +76,8 @@ Requirements for initial release. Each maps to roadmap phases.
 - [x] **PAY-08**: customer.subscription.updated event syncs subscription changes
 - [x] **PAY-09**: customer.subscription.deleted event marks subscription cancelled
 - [x] **PAY-10**: Cancelled subscriptions retain access until period end (cancel_at_period_end)
-- [ ] **PAY-11**: Checkout success page syncs subscription immediately before rendering (queries Stripe API)
-- [ ] **PAY-12**: User can manage subscription via Stripe Customer Portal
+- [x] **PAY-11**: Checkout success page syncs subscription immediately before rendering (queries Stripe API)
+- [x] **PAY-12**: User can manage subscription via Stripe Customer Portal
 - [x] **PAY-13**: Webhook handlers return 200 immediately, process async
 - [x] **PAY-14**: Failed payment prevents credit allocation but doesn't revoke existing credits
 
@@ -207,8 +207,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | CRED-09 | Phase 4 | Complete |
 | CRED-10 | Phase 4 | Pending |
 | PAY-01 | Phase 4 | Pending |
-| PAY-02 | Phase 4 | Pending |
-| PAY-03 | Phase 4 | Pending |
+| PAY-02 | Phase 4 | Complete |
+| PAY-03 | Phase 4 | Complete |
 | PAY-04 | Phase 4 | Complete |
 | PAY-05 | Phase 4 | Complete |
 | PAY-06 | Phase 4 | Complete |
@@ -216,8 +216,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | PAY-08 | Phase 4 | Complete |
 | PAY-09 | Phase 4 | Complete |
 | PAY-10 | Phase 4 | Complete |
-| PAY-11 | Phase 4 | Pending |
-| PAY-12 | Phase 4 | Pending |
+| PAY-11 | Phase 4 | Complete |
+| PAY-12 | Phase 4 | Complete |
 | PAY-13 | Phase 4 | Complete |
 | PAY-14 | Phase 4 | Complete |
 | N8N-01 | Phase 3 | Complete |

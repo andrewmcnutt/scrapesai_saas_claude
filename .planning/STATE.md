@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-02-21)
 ## Current Position
 
 Phase: 4 of 5 (Stripe Integration)
-Plan: 2 of 5 in current phase
+Plan: 3 of 5 in current phase
 Status: In progress
-Last activity: 2026-02-25 — Completed 04-02-PLAN.md (Stripe webhook handler)
+Last activity: 2026-02-25 — Completed 04-03-PLAN.md (Stripe checkout + billing UI)
 
-Progress: [████████░░] 78%
+Progress: [████████░░] 80%
 
 ## Performance Metrics
 
@@ -49,6 +49,7 @@ Progress: [████████░░] 78%
 | Phase 03 P06 | 2 | 1 tasks | 2 files |
 | Phase 04-stripe-integration P01 | 8 | 2 tasks | 6 files |
 | Phase 04-stripe-integration P02 | 10 | 1 tasks | 2 files |
+| Phase 04-stripe-integration P03 | 5 | 2 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -103,6 +104,9 @@ Recent decisions affecting current work:
 - [Phase 04-stripe-integration]: Stripe API v2026-01-28.clover moved current_period_start/end to subscription.items.data[0] and invoice.subscription to invoice.parent.subscription_details.subscription — webhook handler updated accordingly
 - [Phase 04-stripe-integration]: Stripe client made lazy-initialized via Proxy pattern to allow npm run build without STRIPE_SECRET_KEY — defers instantiation to request time
 - [Phase 04-stripe-integration]: Two-layer webhook idempotency: stripe_processed_events (event-level) + invoice_id in credit_transactions metadata (credit-level) for crash-safe double allocation prevention
+- [Phase 04-03]: Success page queries Stripe directly (checkout.sessions.retrieve) to handle webhook race condition — confirmed payment independent of local DB state (PAY-11)
+- [Phase 04-03]: Existing Stripe customers reused via stripe_customer_id lookup before creating checkout session — prevents duplicate customer records
+- [Phase 04-03]: Stripe API v2026-01-28.clover breaking changes fixed in webhook handler: period timestamps on SubscriptionItem, invoice subscription ref in parent.subscription_details
 
 ### Pending Todos
 
@@ -127,7 +131,7 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-02-25 (stripe integration - webhook handler)
-Stopped at: Completed 04-02-PLAN.md
+Last session: 2026-02-25 (stripe integration - checkout + billing UI)
+Stopped at: Completed 04-03-PLAN.md
 Resume file: None
-Next action: Phase 4 Plan 3 - Stripe checkout session + billing UI
+Next action: Phase 4 Plan 4 - Credit enforcement (free tier limit + upgrade prompts)
