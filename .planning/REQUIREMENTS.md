@@ -39,7 +39,7 @@ Requirements for initial release. Each maps to roadmap phases.
 - [x] **GEN-11**: User can regenerate carousel with same settings (costs another credit)
 - [x] **GEN-12**: Generation handles N8N async processing (60-180s) without frontend timeout
 - [x] **GEN-13**: Generation status updates in UI (polling with exponential backoff: 2s, 4s, 8s intervals)
-- [ ] **GEN-14**: Failed generations (timeout after 5 minutes) refund credit automatically
+- [x] **GEN-14**: Failed generations (timeout after 5 minutes) refund credit automatically
 - [x] **GEN-15**: Generate button is debounced to prevent double-click double-spend
 
 ### Carousel History
@@ -89,10 +89,10 @@ Requirements for initial release. Each maps to roadmap phases.
 - [x] **N8N-04**: N8N callback webhook receives: job_id, image_urls[], post_body_text
 - [x] **N8N-05**: N8N callback verifies HMAC signature or API key
 - [x] **N8N-06**: Callback updates carousel record from status='pending' to status='completed'
-- [ ] **N8N-07**: System retries callback failures with exponential backoff
-- [ ] **N8N-08**: Daily reconciliation job compares ImageB uploads vs database records
-- [ ] **N8N-09**: Orphaned images (exist in ImageB but not database) trigger manual review alert
-- [ ] **N8N-10**: Integration uses N8N-MCP GitHub repository for workflow editing
+- [x] **N8N-07**: System retries callback failures with exponential backoff
+- [x] **N8N-08**: Daily reconciliation job compares ImageB uploads vs database records
+- [x] **N8N-09**: Orphaned images (exist in ImageB but not database) trigger manual review alert
+- [x] **N8N-10**: Integration uses N8N-MCP GitHub repository for workflow editing
 
 ### Frontend & Design
 
@@ -188,7 +188,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | GEN-11 | Phase 3 | Complete |
 | GEN-12 | Phase 3 | Complete |
 | GEN-13 | Phase 3 | Complete |
-| GEN-14 | Phase 3 | Pending |
+| GEN-14 | Phase 3 | Complete |
 | GEN-15 | Phase 3 | Complete |
 | HIST-01 | Phase 3 | Complete |
 | HIST-02 | Phase 3 | Pending |
@@ -226,10 +226,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 | N8N-04 | Phase 3 | Complete |
 | N8N-05 | Phase 3 | Complete |
 | N8N-06 | Phase 3 | Complete |
-| N8N-07 | Phase 3 | Pending |
-| N8N-08 | Phase 3 | Pending |
-| N8N-09 | Phase 3 | Pending |
-| N8N-10 | Phase 3 | Pending |
+| N8N-07 | Phase 3 | Complete |
+| N8N-08 | Phase 3 | Complete |
+| N8N-09 | Phase 3 | Complete |
+| N8N-10 | Phase 3 | Complete |
 | UI-01 | Phase 5 | Pending |
 | UI-02 | Phase 5 | Pending |
 | UI-03 | Phase 5 | Pending |
