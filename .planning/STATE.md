@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-02-21)
 ## Current Position
 
 Phase: 3 of 5 (Carousel Generation)
-Plan: 2 of 7 in current phase
+Plan: 3 of 7 in current phase
 Status: In progress
-Last activity: 2026-02-24 — Completed 03-02-PLAN.md (generation API and webhook layer)
+Last activity: 2026-02-25 — Completed 03-03-PLAN.md (generation wizard UI)
 
-Progress: [█████░░░░░] 40%
+Progress: [█████░░░░░] 43%
 
 ## Performance Metrics
 
@@ -29,7 +29,7 @@ Progress: [█████░░░░░] 40%
 |-------|-------|-------|----------|
 | 01    | 4     | 66 min | 17 min  |
 | 02    | 2     | 31 min | 16 min  |
-| 03    | 1     | 3 min  | 3 min   |
+| 03    | 3     | 13 min | 4 min   |
 
 **Recent Plans:**
 
@@ -43,6 +43,7 @@ Progress: [█████░░░░░] 40%
 | Phase 02 P02 | 20 | 3 tasks | 6 files |
 | Phase 03 P01 | 3 min | 2 tasks | 5 files |
 | Phase 03 P02 | 8 min | 2 tasks | 4 files |
+| Phase 03-carousel-generation P03 | 2 | 2 tasks | 6 files |
 
 ## Accumulated Context
 
@@ -77,6 +78,8 @@ Recent decisions affecting current work:
 - [Phase 03-02]: Raw body via request.text() required for HMAC verification — consuming body as JSON first destroys HMAC capability
 - [Phase 03-02]: N8N call failure does NOT trigger credit refund — job exists in DB and is handled by refund_timeout_jobs after 5 minutes
 - [Phase 03-02]: Service role key (bypasses RLS) used in N8N callback handler — no user session available in server-to-server context
+- [Phase 03-03]: Custom image style: imageStyle='custom' + customStyleText stored separately, merged to effectiveImageStyle at submit time
+- [Phase 03-03]: initiateGeneration called directly (not via useActionState) to allow imperative router.push redirect on success
 
 ### Pending Todos
 
@@ -101,7 +104,7 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-02-24 (carousel generation - generation API and webhook layer)
-Stopped at: Completed 03-02-PLAN.md
+Last session: 2026-02-25 (carousel generation - generation wizard UI)
+Stopped at: Completed 03-03-PLAN.md
 Resume file: None
-Next action: Continue Phase 3 - execute 03-03-PLAN.md
+Next action: Continue Phase 3 - execute 03-04-PLAN.md

@@ -26,21 +26,21 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Carousel Generation
 
-- [ ] **GEN-01**: User can input carousel idea as text from dashboard
+- [x] **GEN-01**: User can input carousel idea as text from dashboard
 - [x] **GEN-02**: User can select carousel template from 5-6 options (template URLs provided externally)
 - [x] **GEN-03**: User can select image style from 4 presets (Technical Annotation, Realism Notebook, White Board Diagram, Comic Strip Storyboard)
-- [ ] **GEN-04**: User can enter custom image style as free text
+- [x] **GEN-04**: User can enter custom image style as free text
 - [x] **GEN-05**: System sends idea, template URL, image style, and brand data to N8N webhook
 - [x] **GEN-06**: System deducts 1 credit atomically before calling N8N (PostgreSQL RPC with SELECT FOR UPDATE)
 - [ ] **GEN-07**: N8N workflow processes request and returns carousel image URLs (5-10 slides from ImageB) and post body text
 - [ ] **GEN-08**: Generated carousel displays on dashboard with all slides visible
 - [ ] **GEN-09**: Generated post body text displays with carousel
 - [ ] **GEN-10**: User can download all carousel images as single zip file
-- [ ] **GEN-11**: User can regenerate carousel with same settings (costs another credit)
+- [x] **GEN-11**: User can regenerate carousel with same settings (costs another credit)
 - [x] **GEN-12**: Generation handles N8N async processing (60-180s) without frontend timeout
 - [ ] **GEN-13**: Generation status updates in UI (polling with exponential backoff: 2s, 4s, 8s intervals)
 - [ ] **GEN-14**: Failed generations (timeout after 5 minutes) refund credit automatically
-- [ ] **GEN-15**: Generate button is debounced to prevent double-click double-spend
+- [x] **GEN-15**: Generate button is debounced to prevent double-click double-spend
 
 ### Carousel History
 
@@ -175,21 +175,21 @@ Which phases cover which requirements. Updated during roadmap creation.
 | BRND-03 | Phase 2 | Complete |
 | BRND-04 | Phase 2 | Complete |
 | BRND-05 | Phase 2 | Complete |
-| GEN-01 | Phase 3 | Pending |
+| GEN-01 | Phase 3 | Complete |
 | GEN-02 | Phase 3 | Complete |
 | GEN-03 | Phase 3 | Complete |
-| GEN-04 | Phase 3 | Pending |
+| GEN-04 | Phase 3 | Complete |
 | GEN-05 | Phase 3 | Complete |
 | GEN-06 | Phase 3 | Complete |
 | GEN-07 | Phase 3 | Pending |
 | GEN-08 | Phase 3 | Pending |
 | GEN-09 | Phase 3 | Pending |
 | GEN-10 | Phase 3 | Pending |
-| GEN-11 | Phase 3 | Pending |
+| GEN-11 | Phase 3 | Complete |
 | GEN-12 | Phase 3 | Complete |
 | GEN-13 | Phase 3 | Pending |
 | GEN-14 | Phase 3 | Pending |
-| GEN-15 | Phase 3 | Pending |
+| GEN-15 | Phase 3 | Complete |
 | HIST-01 | Phase 3 | Complete |
 | HIST-02 | Phase 3 | Pending |
 | HIST-03 | Phase 3 | Complete |
