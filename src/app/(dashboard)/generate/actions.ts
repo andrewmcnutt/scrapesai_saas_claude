@@ -4,7 +4,7 @@ import { createClient } from '@/lib/supabase/server'
 import { GenerationSchema } from '@/lib/validations/carousel'
 
 export async function initiateGeneration(
-  prevState: any,
+  prevState: unknown,
   formData: FormData
 ) {
   // Validate form data using GenerationSchema

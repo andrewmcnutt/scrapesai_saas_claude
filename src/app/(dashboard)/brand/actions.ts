@@ -6,7 +6,7 @@ import { createClient } from '@/lib/supabase/server'
 import { BrandProfileSchema } from '@/lib/validations/brand'
 
 export async function saveBrandProfile(
-  prevState: any,
+  prevState: unknown,
   formData: FormData
 ) {
   // Validate input with Zod
