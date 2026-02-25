@@ -116,7 +116,6 @@ export function CreditBalance() {
   }
 
   // Free tier state
-  const creditsUsed = 3 - balance
   const hasCreditsLeft = balance > 0
 
   return (
