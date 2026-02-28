@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { Button } from '@/components/ui/button'
 
 interface PaginationProps {
   currentPage: number
@@ -20,13 +22,10 @@ export function Pagination({ currentPage, totalPages }: PaginationProps) {
     pages.push(1)
 
     if (currentPage <= 3) {
-      // Near the start: 1 2 3 4 ... N
       pages.push(2, 3, 4, 'ellipsis', totalPages)
     } else if (currentPage >= totalPages - 2) {
-      // Near the end: 1 ... N-3 N-2 N-1 N
       pages.push('ellipsis', totalPages - 3, totalPages - 2, totalPages - 1, totalPages)
     } else {
-      // Middle: 1 ... X-1 X X+1 ... N
       pages.push('ellipsis', currentPage - 1, currentPage, currentPage + 1, 'ellipsis', totalPages)
     }
 
@@ -34,12 +33,6 @@ export function Pagination({ currentPage, totalPages }: PaginationProps) {
   }
 
   const pages = getPageNumbers()
-
-  const linkClass =
-    'inline-flex items-center justify-center w-9 h-9 rounded-md text-sm font-medium transition-colors'
-  const activeClass = 'bg-blue-600 text-white'
-  const inactiveClass = 'text-gray-700 hover:bg-gray-100'
-  const disabledClass = 'text-gray-300 cursor-not-allowed pointer-events-none'
 
   return (
     <nav
@@ -49,63 +42,62 @@ export function Pagination({ currentPage, totalPages }: PaginationProps) {
     >
       {/* Previous button */}
       {currentPage <= 1 ? (
-        <span className={`${linkClass} ${disabledClass}`} aria-disabled="true">
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
-        </span>
+        <Button variant="outline" size="icon" disabled aria-disabled="true" className="h-9 w-9">
+          <ChevronLeft className="w-4 h-4" />
+        </Button>
       ) : (
-        <Link
-          href={`/history?page=${currentPage - 1}`}
-          className={`${linkClass} ${inactiveClass}`}
-          aria-label="Previous page"
-        >
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
-        </Link>
+        <Button asChild variant="outline" size="icon" className="h-9 w-9">
+          <Link href={`/history?page=${currentPage - 1}`} aria-label="Previous page">
+            <ChevronLeft className="w-4 h-4" />
+          </Link>
+        </Button>
       )}
 
       {/* Page numbers */}
       {pages.map((page, index) => {
         if (page === 'ellipsis') {
           return (
-            <span key={`ellipsis-${index}`} className={`${linkClass} text-gray-400`}>
+            <span
+              key={`ellipsis-${index}`}
+              className="inline-flex items-center justify-center w-9 h-9 text-sm text-muted-foreground"
+            >
               &hellip;
             </span>
           )
         }
 
         return (
-          <Link
+          <Button
             key={page}
-            href={`/history?page=${page}`}
-            className={`${linkClass} ${page === currentPage ? activeClass : inactiveClass}`}
+            asChild={page !== currentPage}
+            variant={page === currentPage ? 'default' : 'outline'}
+            size="icon"
+            className="h-9 w-9"
             aria-label={`Page ${page}`}
             aria-current={page === currentPage ? 'page' : undefined}
           >
-            {page}
-          </Link>
+            {page === currentPage ? (
+              <span>{page}</span>
+            ) : (
+              <Link href={`/history?page=${page}`}>
+                {page}
+              </Link>
+            )}
+          </Button>
         )
       })}
 
       {/* Next button */}
       {currentPage >= totalPages ? (
-        <span className={`${linkClass} ${disabledClass}`} aria-disabled="true">
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
-        </span>
+        <Button variant="outline" size="icon" disabled aria-disabled="true" className="h-9 w-9">
+          <ChevronRight className="w-4 h-4" />
+        </Button>
       ) : (
-        <Link
-          href={`/history?page=${currentPage + 1}`}
-          className={`${linkClass} ${inactiveClass}`}
-          aria-label="Next page"
-        >
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
-        </Link>
+        <Button asChild variant="outline" size="icon" className="h-9 w-9">
+          <Link href={`/history?page=${currentPage + 1}`} aria-label="Next page">
+            <ChevronRight className="w-4 h-4" />
+          </Link>
+        </Button>
       )}
     </nav>
   )

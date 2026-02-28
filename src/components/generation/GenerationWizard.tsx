@@ -8,6 +8,10 @@ import { TemplateStep } from './TemplateStep'
 import { StyleStep } from './StyleStep'
 import { initiateGeneration } from '@/app/(dashboard)/generate/actions'
 import { IdeaStepSchema, TemplateStepSchema, StyleStepSchema } from '@/lib/validations/carousel'
+import { Card, CardContent } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
+import { Alert, AlertDescription } from '@/components/ui/alert'
+import { AlertTriangle } from 'lucide-react'
 
 const STEPS = [
   { id: 'idea', label: 'Idea' },
@@ -122,77 +126,75 @@ export function GenerationWizard({ defaultValues }: GenerationWizardProps) {
       if (response.success && response.job_id) {
         router.push(`/carousel/${response.job_id}`)
       } else {
-        setSubmitError(response.message ?? 'An unexpected error occurred. Please try again.')
+        setSubmitError(response.message ?? 'Could not start generation. Please check your connection and try again.')
         setIsSubmitting(false)
       }
     } catch {
-      setSubmitError('An unexpected error occurred. Please try again.')
+      setSubmitError('Could not start generation. Please check your connection and try again.')
       setIsSubmitting(false)
     }
   }
 
   return (
-    <div>
-      <StepIndicator steps={STEPS} currentStep={currentStep} />
+    <Card>
+      <CardContent className="pt-6">
+        <StepIndicator steps={STEPS} currentStep={currentStep} />
 
-      <div className="min-h-[300px]">
-        {currentStep === 0 && (
-          <IdeaStep data={formData} setData={setFormData} errors={errors} />
-        )}
-        {currentStep === 1 && (
-          <TemplateStep data={formData} setData={setFormData} errors={errors} />
-        )}
-        {currentStep === 2 && (
-          <StyleStep
-            data={formData}
-            setData={setFormData}
-            errors={errors}
-            isSubmitting={isSubmitting}
-          />
-        )}
-      </div>
-
-      {submitError && (
-        <div className="mt-4 p-3 bg-red-50 border border-red-200 rounded-md">
-          <p className="text-red-600 text-sm">{submitError}</p>
-        </div>
-      )}
-
-      <div className="flex justify-between mt-8 pt-6 border-t border-gray-100">
-        <div>
-          {currentStep > 0 && (
-            <button
-              type="button"
-              onClick={handleBack}
-              disabled={isSubmitting}
-              className="px-5 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-            >
-              Back
-            </button>
+        <div className="min-h-[300px]">
+          {currentStep === 0 && (
+            <IdeaStep data={formData} setData={setFormData} errors={errors} />
+          )}
+          {currentStep === 1 && (
+            <TemplateStep data={formData} setData={setFormData} errors={errors} />
+          )}
+          {currentStep === 2 && (
+            <StyleStep
+              data={formData}
+              setData={setFormData}
+              errors={errors}
+              isSubmitting={isSubmitting}
+            />
           )}
         </div>
 
-        <div>
-          {currentStep < 2 ? (
-            <button
-              type="button"
-              onClick={handleNext}
-              className="px-5 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors"
-            >
-              Next
-            </button>
-          ) : (
-            <button
-              type="button"
-              onClick={handleSubmit}
-              disabled={isSubmitting}
-              className="px-6 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
-            >
-              {isSubmitting ? 'Generating...' : 'Generate'}
-            </button>
-          )}
+        {submitError && (
+          <Alert variant="destructive" className="mt-4">
+            <AlertTriangle className="h-4 w-4" />
+            <AlertDescription>{submitError}</AlertDescription>
+          </Alert>
+        )}
+
+        <div className="flex justify-between mt-8 pt-6 border-t">
+          <div>
+            {currentStep > 0 && (
+              <Button
+                type="button"
+                variant="outline"
+                onClick={handleBack}
+                disabled={isSubmitting}
+              >
+                Back
+              </Button>
+            )}
+          </div>
+
+          <div>
+            {currentStep < 2 ? (
+              <Button type="button" onClick={handleNext}>
+                Next
+              </Button>
+            ) : (
+              <Button
+                type="button"
+                onClick={handleSubmit}
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? 'Generating...' : 'Generate'}
+              </Button>
+            )}
+          </div>
         </div>
-      </div>
-    </div>
+      </CardContent>
+    </Card>
   )
 }

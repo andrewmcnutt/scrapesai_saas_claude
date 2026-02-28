@@ -1,12 +1,23 @@
+import { Navbar } from "@/components/landing/Navbar";
+import { HeroSection } from "@/components/landing/HeroSection";
+import { FeaturesSection } from "@/components/landing/FeaturesSection";
+import { HowItWorksSection } from "@/components/landing/HowItWorksSection";
+import { PricingSection } from "@/components/landing/PricingSection";
+import { CTASection } from "@/components/landing/CTASection";
+import { Footer } from "@/components/landing/Footer";
+
 export default function Home() {
   return (
-    <div className="min-h-screen flex items-center justify-center">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Carousel Creator SaaS</h1>
-        <p className="text-lg text-gray-600">
-          Create professional LinkedIn carousels with AI
-        </p>
-      </div>
+    <div className="min-h-screen bg-white">
+      <Navbar />
+      <main>
+        <HeroSection />
+        <FeaturesSection />
+        <HowItWorksSection />
+        <PricingSection />
+        <CTASection />
+      </main>
+      <Footer />
     </div>
   );
 }

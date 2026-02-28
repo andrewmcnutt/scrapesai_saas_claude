@@ -4,6 +4,13 @@ import { createClient } from '@/lib/supabase/client'
 import { createCheckoutSession } from '@/lib/stripe/actions'
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import { Card, CardHeader, CardTitle, CardContent, CardFooter } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
+import { Progress } from '@/components/ui/progress'
+import { Skeleton } from '@/components/ui/skeleton'
+import { Alert, AlertDescription } from '@/components/ui/alert'
+import { Button } from '@/components/ui/button'
+import { AlertTriangle } from 'lucide-react'
 
 interface SubscriptionState {
   balance: number
@@ -59,7 +66,18 @@ export function CreditBalance() {
   }, [supabase])
 
   if (loading) {
-    return <div className="text-gray-600">Loading credits...</div>
+    return (
+      <Card>
+        <CardHeader>
+          <Skeleton className="h-5 w-24" />
+        </CardHeader>
+        <CardContent className="space-y-3">
+          <Skeleton className="h-10 w-20" />
+          <Skeleton className="h-4 w-40" />
+          <Skeleton className="h-2 w-full" />
+        </CardContent>
+      </Card>
+    )
   }
 
   if (!state) {
@@ -71,47 +89,64 @@ export function CreditBalance() {
   // Past due state
   if (isPastDue) {
     return (
-      <div className="bg-white p-6 rounded-lg shadow border border-yellow-300">
-        <h2 className="text-lg font-semibold mb-2 text-yellow-900">Pro Plan - Payment Issue</h2>
-        <p className="text-4xl font-bold text-yellow-600">{balance}</p>
-        <p className="text-sm text-yellow-700 mt-2">Credits available (payment update required)</p>
-        <Link
-          href="/billing"
-          className="mt-4 inline-block bg-yellow-600 text-white px-4 py-2 rounded hover:bg-yellow-700 text-sm font-medium"
-        >
-          Update payment method
-        </Link>
-      </div>
+      <Card className="border-yellow-300">
+        <CardHeader>
+          <div className="flex items-center justify-between">
+            <CardTitle className="text-lg text-yellow-900">Pro Plan</CardTitle>
+            <Badge className="bg-yellow-100 text-yellow-700 border-yellow-300">Payment Issue</Badge>
+          </div>
+        </CardHeader>
+        <CardContent>
+          <p className="text-4xl font-bold text-yellow-600">{balance}</p>
+          <p className="text-sm text-yellow-700 mt-2">Credits available (payment update required)</p>
+        </CardContent>
+        <CardFooter>
+          <Button asChild className="bg-yellow-600 hover:bg-yellow-700">
+            <Link href="/billing">Update payment method</Link>
+          </Button>
+        </CardFooter>
+      </Card>
     )
   }
 
   // Paid (active subscription) state
   if (isActiveSub) {
     return (
-      <div className="bg-white p-6 rounded-lg shadow">
-        <h2 className="text-lg font-semibold mb-2">Pro Plan</h2>
-        <p className="text-4xl font-bold text-indigo-600">{balance}</p>
-        <p className="text-sm text-gray-600 mt-2">{balance} credits available</p>
-        {cancelAtPeriodEnd && currentPeriodEnd && (
-          <p className="text-sm text-yellow-600 mt-2">
-            Cancels on{' '}
-            {new Date(currentPeriodEnd).toLocaleDateString('en-US', {
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric',
-            })}
-          </p>
-        )}
-        {balance < 3 && (
-          <p className="text-sm text-orange-600 mt-2 font-medium">Credits are running low</p>
-        )}
-        <Link
-          href="/billing"
-          className="mt-4 inline-block text-sm text-indigo-600 hover:underline"
-        >
-          Manage subscription
-        </Link>
-      </div>
+      <Card>
+        <CardHeader>
+          <div className="flex items-center justify-between">
+            <CardTitle className="text-lg">Credits</CardTitle>
+            <Badge variant="secondary">Pro Plan</Badge>
+          </div>
+        </CardHeader>
+        <CardContent>
+          <p className="text-4xl font-bold text-primary">{balance}</p>
+          <p className="text-sm text-muted-foreground mt-2">{balance} credits available</p>
+          {cancelAtPeriodEnd && currentPeriodEnd && (
+            <p className="text-sm text-yellow-600 mt-2">
+              Cancels on{' '}
+              {new Date(currentPeriodEnd).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+              })}
+            </p>
+          )}
+          {balance < 3 && (
+            <Alert className="mt-3 border-orange-200 bg-orange-50">
+              <AlertTriangle className="h-4 w-4 text-orange-600" />
+              <AlertDescription className="text-orange-600 font-medium">
+                Credits are running low
+              </AlertDescription>
+            </Alert>
+          )}
+        </CardContent>
+        <CardFooter>
+          <Button asChild variant="link" className="px-0">
+            <Link href="/billing">Manage subscription</Link>
+          </Button>
+        </CardFooter>
+      </Card>
     )
   }
 
@@ -119,29 +154,27 @@ export function CreditBalance() {
   const hasCreditsLeft = balance > 0
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow">
-      <h2 className="text-lg font-semibold mb-2">Free Plan</h2>
-      <p className="text-4xl font-bold text-blue-600">{balance} of 3</p>
-      <p className="text-sm text-gray-600 mt-2">
-        {hasCreditsLeft
-          ? `You have ${balance} free carousel${balance === 1 ? '' : 's'} remaining`
-          : "You've used all 3 free carousels"}
-      </p>
-      {/* Progress bar showing credit usage */}
-      <div className="mt-3 w-full bg-gray-200 rounded-full h-1.5">
-        <div
-          className="bg-blue-600 h-1.5 rounded-full"
-          style={{ width: `${Math.max(0, (balance / 3) * 100)}%` }}
-        />
-      </div>
-      <form action={createCheckoutSession} className="mt-4">
-        <button
-          type="submit"
-          className="w-full bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 font-medium text-sm"
-        >
-          Upgrade to Pro - $29.99/mo
-        </button>
-      </form>
-    </div>
+    <Card>
+      <CardHeader>
+        <div className="flex items-center justify-between">
+          <CardTitle className="text-lg">Credits</CardTitle>
+          <Badge variant="outline">Free Plan</Badge>
+        </div>
+      </CardHeader>
+      <CardContent>
+        <p className="text-4xl font-bold text-primary">{balance} of 3</p>
+        <p className="text-sm text-muted-foreground mt-2">
+          {hasCreditsLeft
+            ? `You have ${balance} free carousel${balance === 1 ? '' : 's'} remaining`
+            : "You've used all 3 free carousels"}
+        </p>
+        <Progress value={Math.max(0, (balance / 3) * 100)} className="mt-3" />
+        <form action={createCheckoutSession} className="mt-4">
+          <Button type="submit" className="w-full">
+            Upgrade to Pro - $29.99/mo
+          </Button>
+        </form>
+      </CardContent>
+    </Card>
   )
 }

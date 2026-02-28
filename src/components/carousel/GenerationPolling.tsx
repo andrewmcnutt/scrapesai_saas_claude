@@ -2,6 +2,8 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { pollCarouselStatus, CarouselStatusResponse } from '@/lib/carousel/poll-status'
+import { Progress } from '@/components/ui/progress'
+import { Loader2 } from 'lucide-react'
 
 const PROGRESS_MESSAGES = [
   'AI is crafting your slides...',
@@ -56,7 +58,7 @@ export function GenerationPolling({ jobId, onComplete, onError }: GenerationPoll
         }
       })
       .catch(() => {
-        onError('An unexpected error occurred. Please refresh the page and try again.')
+        onError('Lost connection while waiting for your carousel. Please refresh to check the status.')
       })
   }, [jobId, onComplete, onError])
 
@@ -70,35 +72,30 @@ export function GenerationPolling({ jobId, onComplete, onError }: GenerationPoll
     <div className="flex flex-col items-center justify-center min-h-[400px] px-8 py-12">
       {/* Spinner */}
       <div className="mb-8">
-        <div className="w-16 h-16 border-4 border-gray-200 border-t-blue-600 rounded-full animate-spin" />
+        <Loader2 className="w-16 h-16 text-primary animate-spin" />
       </div>
 
       {/* Heading */}
-      <h2 className="text-2xl font-semibold text-gray-900 mb-2">
+      <h2 className="text-2xl font-semibold mb-2">
         Generating your carousel...
       </h2>
 
       {/* Rotating message */}
-      <p className="text-gray-500 mb-8 text-center transition-all duration-500">
+      <p className="text-muted-foreground mb-8 text-center transition-all duration-500">
         {PROGRESS_MESSAGES[messageIndex]}
       </p>
 
       {/* Progress bar */}
       <div className="w-full max-w-md mb-4">
-        <div className="flex justify-between text-xs text-gray-400 mb-1">
+        <div className="flex justify-between text-xs text-muted-foreground mb-1">
           <span>Progress</span>
           <span>{progressPercent}%</span>
         </div>
-        <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
-          <div
-            className="h-full bg-blue-600 rounded-full transition-all duration-1000 ease-out"
-            style={{ width: `${progressPercent}%` }}
-          />
-        </div>
+        <Progress value={progressPercent} />
       </div>
 
       {/* Estimated time note */}
-      <p className="text-sm text-gray-400 text-center max-w-sm">
+      <p className="text-sm text-muted-foreground text-center max-w-sm">
         This typically takes 60&ndash;180 seconds. You can leave this page and check back
         later.
       </p>

@@ -1,6 +1,9 @@
 import { createClient } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
 import { BrandSettingsForm } from './brand-settings-form'
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
+import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert'
+import { AlertTriangle } from 'lucide-react'
 
 export default async function BrandPage() {
   const supabase = await createClient()
@@ -21,32 +24,38 @@ export default async function BrandPage() {
     console.error('Error fetching brand profile:', error)
     return (
       <div className="max-w-3xl mx-auto px-4 py-8">
-        <div className="bg-red-50 border border-red-200 p-4 rounded">
-          <h2 className="font-semibold text-red-800">Error loading brand settings</h2>
-          <p className="text-sm text-red-600 mt-1">Please try refreshing the page.</p>
-        </div>
+        <Alert variant="destructive">
+          <AlertTriangle className="h-4 w-4" />
+          <AlertTitle>Error loading brand settings</AlertTitle>
+          <AlertDescription>Please try refreshing the page.</AlertDescription>
+        </Alert>
       </div>
     )
   }
 
   return (
-    <div className="max-w-3xl mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-2">Brand Settings</h1>
-      <p className="text-gray-600 mb-8">
-        Customize your brand identity to personalize carousel generation.
-      </p>
-
-      <BrandSettingsForm
-        initialData={{
-          brandName: profile.brand_name,
-          primaryColor: profile.primary_color,
-          secondaryColor: profile.secondary_color,
-          voiceGuidelines: profile.voice_guidelines,
-          productDescription: profile.product_description,
-          targetAudience: profile.target_audience,
-          ctaText: profile.cta_text,
-        }}
-      />
+    <div className="max-w-3xl mx-auto">
+      <Card>
+        <CardHeader>
+          <CardTitle className="text-3xl">Brand Settings</CardTitle>
+          <CardDescription>
+            Customize your brand identity to personalize carousel generation.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <BrandSettingsForm
+            initialData={{
+              brandName: profile.brand_name,
+              primaryColor: profile.primary_color,
+              secondaryColor: profile.secondary_color,
+              voiceGuidelines: profile.voice_guidelines,
+              productDescription: profile.product_description,
+              targetAudience: profile.target_audience,
+              ctaText: profile.cta_text,
+            }}
+          />
+        </CardContent>
+      </Card>
     </div>
   )
 }

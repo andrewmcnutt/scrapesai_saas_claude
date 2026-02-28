@@ -3,6 +3,9 @@ import { createClient } from '@/lib/supabase/server'
 import { HistoryList } from '@/components/history/HistoryList'
 import { Pagination } from '@/components/history/Pagination'
 import type { Tables } from '@/types/database'
+import { Card, CardContent } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
+import { Archive } from 'lucide-react'
 
 const PAGE_SIZE = 20
 
@@ -44,7 +47,7 @@ export default async function HistoryPage({ searchParams }: HistoryPageProps) {
   if (error) {
     return (
       <div className="flex flex-col items-center justify-center min-h-[400px] text-center">
-        <p className="text-red-600 text-sm">Failed to load history. Please refresh the page.</p>
+        <p className="text-destructive text-sm">Failed to load history. Please refresh the page.</p>
       </div>
     )
   }
@@ -55,8 +58,8 @@ export default async function HistoryPage({ searchParams }: HistoryPageProps) {
     <div>
       {/* Page header */}
       <div className="mb-8">
-        <h1 className="text-2xl font-bold text-gray-900">Carousel History</h1>
-        <p className="mt-1 text-sm text-gray-500">
+        <h1 className="text-2xl font-bold">Carousel History</h1>
+        <p className="mt-1 text-sm text-muted-foreground">
           {totalCount === 0
             ? 'No carousels generated yet'
             : `${totalCount} carousel${totalCount === 1 ? '' : 's'} generated`}
@@ -65,34 +68,20 @@ export default async function HistoryPage({ searchParams }: HistoryPageProps) {
 
       {/* Empty state */}
       {typedCarousels.length === 0 ? (
-        <div className="flex flex-col items-center justify-center min-h-[400px] text-center">
-          <div className="mb-4 flex items-center justify-center w-16 h-16 rounded-full bg-gray-100">
-            <svg
-              className="w-8 h-8 text-gray-400"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
-              />
-            </svg>
-          </div>
-          <h2 className="text-lg font-semibold text-gray-900 mb-2">No carousels yet</h2>
-          <p className="text-gray-500 text-sm mb-6 max-w-sm">
-            Create your first carousel to see it here.
-          </p>
-          <Link
-            href="/generate"
-            className="px-5 py-2.5 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors"
-          >
-            Create your first one
-          </Link>
-        </div>
+        <Card className="flex flex-col items-center justify-center min-h-[400px] text-center">
+          <CardContent className="pt-6 flex flex-col items-center">
+            <div className="mb-4 flex items-center justify-center w-16 h-16 rounded-full bg-muted">
+              <Archive className="w-8 h-8 text-muted-foreground" />
+            </div>
+            <h2 className="text-lg font-semibold mb-2">No carousels yet</h2>
+            <p className="text-muted-foreground text-sm mb-6 max-w-sm">
+              Create your first carousel to see it here.
+            </p>
+            <Button asChild>
+              <Link href="/generate">Create your first one</Link>
+            </Button>
+          </CardContent>
+        </Card>
       ) : (
         <>
           <HistoryList carousels={typedCarousels} />
